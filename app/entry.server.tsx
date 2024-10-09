@@ -1,31 +1,31 @@
 import { PassThrough } from "node:stream"
-import type { AppLoadContext, EntryContext } from "@remix-run/node"
-import { RemixServer } from "@remix-run/react"
+import { createReadableStreamFromReadable } from "@react-router/node"
 import type { Context } from "hono"
 import { createInstance } from "i18next"
 import { isbot } from "isbot"
 import { renderToPipeableStream } from "react-dom/server"
 import { I18nextProvider, initReactI18next } from "react-i18next"
+import { type AppLoadContext, type EntryContext, ServerRouter } from "react-router"
 import { createHonoServer } from "react-router-hono-server/node"
 import { i18next } from "remix-hono/i18next"
 import { getClientEnv, initEnv } from "./env.server"
 import i18n from "./localization/i18n" // your i18n configuration file
 import i18nextOpts from "./localization/i18n.server"
 import { resources } from "./localization/resource"
-
 const ABORT_DELAY = 5000
 
 export default async function handleRequest(
 	request: Request,
 	responseStatusCode: number,
 	responseHeaders: Headers,
-	remixContext: EntryContext,
+	context: EntryContext,
 	appContext: AppLoadContext
 ) {
 	const callbackName = isbot(request.headers.get("user-agent")) ? "onAllReady" : "onShellReady"
 	const instance = createInstance()
 	const lng = appContext.lang
-	const ns = i18nextOpts.getRouteNamespaces(remixContext)
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	const ns = i18nextOpts.getRouteNamespaces(context as any)
 
 	await instance
 		.use(initReactI18next) // Tell our instance to use react-i18next
@@ -41,17 +41,17 @@ export default async function handleRequest(
 
 		const { pipe, abort } = renderToPipeableStream(
 			<I18nextProvider i18n={instance}>
-				<RemixServer context={remixContext} url={request.url} />
+				<ServerRouter abortDelay={ABORT_DELAY} context={context} url={request.url} />
 			</I18nextProvider>,
 			{
 				[callbackName]: () => {
 					const body = new PassThrough()
-
+					const stream = createReadableStreamFromReadable(body)
 					responseHeaders.set("Content-Type", "text/html")
 
 					resolve(
 						// @ts-expect-error - We purposely do not define the body as existent so it's not used inside loaders as it's injected there as well
-						appContext.body(body, {
+						appContext.body(stream, {
 							headers: responseHeaders,
 							status: didError ? 500 : responseStatusCode,
 						})
@@ -100,7 +100,7 @@ interface LoadContext extends Awaited<ReturnType<typeof getLoadContext>> {}
 /**
  * Declare our loaders and actions context type
  */
-declare module "@remix-run/node" {
+declare module "react-router" {
 	interface AppLoadContext extends Omit<LoadContext, "body"> {}
 }
 

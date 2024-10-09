@@ -1,8 +1,9 @@
 import { generateRobotsTxt } from "@forge42/seo-tools/robots"
-import type { LoaderFunctionArgs } from "@remix-run/node"
-import { createDomain } from "~/utils/http"
 
-export async function loader({ request }: LoaderFunctionArgs) {
+import { createDomain } from "~/utils/http"
+import type * as Route from "./+types.robots[.]txt"
+
+export async function loader({ request }: Route.LoaderArgs) {
 	const isProductionDeployment = process.env.DEPLOYMENT_ENV === "production"
 	const domain = createDomain(request)
 	const robotsTxt = generateRobotsTxt([

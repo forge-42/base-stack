@@ -1,8 +1,9 @@
 import { generateSitemapIndex } from "@forge42/seo-tools/sitemap"
-import type { LoaderFunctionArgs } from "@remix-run/node"
-import { createDomain } from "~/utils/http"
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
+import { createDomain } from "~/utils/http"
+import type * as Route from "./+types.sitemap-index[.]xml"
+
+export const loader = async ({ request }: Route.LoaderArgs) => {
 	const domain = createDomain(request)
 	const sitemaps = generateSitemapIndex([
 		{

@@ -29,6 +29,7 @@
 	"[javascript][typescript][typescriptreact][javascriptreact][json][jsonc][vue][astro][svelte][css][graphql]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
+	"typescript.tsdk": "node_modules/typescript/lib",
 	"explorer.fileNesting.patterns": {
 		"*.ts": "${basename}.*.${extname}",
 		".env": ".env.*",

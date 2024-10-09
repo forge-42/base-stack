@@ -1,13 +1,15 @@
-import type { LinksFunction } from "@remix-run/node"
-import { type LoaderFunctionArgs, json } from "@remix-run/node"
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from "@remix-run/react"
 import { useTranslation } from "react-i18next"
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
+import type { LinksFunction } from "react-router"
 import { useChangeLanguage } from "remix-i18next/react"
+import type * as Route from "./+types.root"
 import { LanguageSwitcher } from "./library/language-switcher"
 import tailwindcss from "./tailwind.css?url"
 
-export async function loader({ context: { lang, clientEnv } }: LoaderFunctionArgs) {
-	return json({ lang, clientEnv })
+export async function loader({ context }: Route.LoaderArgs) {
+	if (!context) throw new Error("No context")
+	const { lang, clientEnv } = context
+	return { lang, clientEnv }
 }
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: tailwindcss }]
@@ -16,8 +18,8 @@ export const handle = {
 	i18n: "common",
 }
 
-export default function App() {
-	const { lang, clientEnv } = useLoaderData<typeof loader>()
+export default function App({ loaderData }: Route.ComponentProps) {
+	const { lang, clientEnv } = loaderData
 	const { i18n } = useTranslation()
 	useChangeLanguage(lang)
 

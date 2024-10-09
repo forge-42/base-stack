@@ -1,5 +1,5 @@
-import { Link, useLocation } from "@remix-run/react"
 import { useTranslation } from "react-i18next"
+import { Link, useLocation } from "react-router"
 import { supportedLanguages } from "~/localization/resource"
 
 const LanguageSwitcher = () => {

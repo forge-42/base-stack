@@ -1,4 +1,4 @@
-import { vitePlugin as remix } from "@remix-run/dev"
+import { reactRouter } from "@react-router/dev/vite"
 import { devServer } from "react-router-hono-server/dev"
 import { remixDevTools } from "remix-development-tools"
 import { defineConfig } from "vite"
@@ -11,15 +11,7 @@ export default defineConfig({
 			exclude: [/^\/(resources)\/.+/],
 		}),
 		remixDevTools(),
-		remix({
-			future: {
-				unstable_optimizeDeps: true,
-				unstable_singleFetch: true,
-				v3_fetcherPersist: true,
-				v3_relativeSplatPath: true,
-				v3_throwAbortReason: true,
-			},
-		}),
+		reactRouter(),
 		tsconfigPaths(),
 		iconsSpritesheet({
 			inputDir: "./resources/icons",

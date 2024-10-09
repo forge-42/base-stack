@@ -1,7 +1,8 @@
 {
 	"$schema": "https://unpkg.com/knip@5/schema.json",
-	"entry": ["scripts/*.{ts,js}"],
+	"entry": ["scripts/*.{ts,js}", "app/routes.ts"],
+	"remix": true,
 	"project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}", "vite.config.ts"],
 	"ignore": ["app/library/icon/icons/types.ts"],
-	"ignoreDependencies": ["virtual:remix"]
+	"ignoreDependencies": ["virtual:react-router", "lefthook"]
 }

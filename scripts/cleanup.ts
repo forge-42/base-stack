@@ -30,7 +30,7 @@ const removeTheCleanupFromPackageJsonAndScripts = async () => {
 }
 
 const revertIndexRoute = async () => {
-	const file = `import type { MetaFunction } from "@remix-run/node";
+	const file = `import type { MetaFunction } from "react-router";
 import { useTranslation } from "react-i18next";
 
 export const meta: MetaFunction = () => {

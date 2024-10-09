@@ -1,5 +1,5 @@
 {
-	"include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/**/.server/**/*.ts"],
+	"include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/**/.server/**/*.ts", ".react-router/types/**/*"],
 	"compilerOptions": {
 		"types": ["vitest/globals"],
 		"lib": ["DOM", "DOM.Iterable", "ES2022"],
@@ -18,7 +18,8 @@
 		"paths": {
 			"~/*": ["./app/*"]
 		},
-
+		"rootDirs": [".", "./.react-router/types"],
+		"plugins": [{ "name": "@react-router/dev" }],
 		// Vite takes care of building everything, not tsc.
 		"noEmit": true
 	}
