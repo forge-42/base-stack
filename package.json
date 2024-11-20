@@ -43,7 +43,7 @@
 		"react-router": "7.0.0-pre.6",
 		"react-router-hono-server": "https://pkg.pr.new/rphlmr/react-router-hono-server@10.tgz",
 		"remix-hono": "^0.0.16",
-		"remix-i18next": "^6.4.1",
+		"remix-i18next": "https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17",
 		"tailwind-merge": "^2.5.3",
 		"zod": "^3.23.8"
 	},

@@ -49,13 +49,13 @@ importers:
         version: 7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-hono-server:
         specifier: https://pkg.pr.new/rphlmr/react-router-hono-server@10.tgz
-        version: https://pkg.pr.new/rphlmr/react-router-hono-server@10.tgz(@remix-run/node@2.12.1(typescript@5.6.3))(hono@4.6.3)(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(remix-hono@0.0.16(i18next@23.15.2)(remix-i18next@6.4.1(@remix-run/node@2.12.1(typescript@5.6.3))(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8))(vite@5.4.8(@types/node@22.7.5))
+        version: https://pkg.pr.new/rphlmr/react-router-hono-server@10.tgz(@remix-run/node@2.12.1(typescript@5.6.3))(hono@4.6.3)(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(remix-hono@0.0.16(i18next@23.15.2)(remix-i18next@https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17(@react-router/node@7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8))(vite@5.4.8(@types/node@22.7.5))
       remix-hono:
         specifier: ^0.0.16
-        version: 0.0.16(i18next@23.15.2)(remix-i18next@6.4.1(@remix-run/node@2.12.1(typescript@5.6.3))(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8)
+        version: 0.0.16(i18next@23.15.2)(remix-i18next@https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17(@react-router/node@7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8)
       remix-i18next:
-        specifier: ^6.4.1
-        version: 6.4.1(@remix-run/node@2.12.1(typescript@5.6.3))(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        specifier: https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17
+        version: https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17(@react-router/node@7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       tailwind-merge:
         specifier: ^2.5.3
         version: 2.5.3
@@ -1356,17 +1356,6 @@ packages:
     resolution: {integrity: sha512-d+IHvEEU3qziporgpEyKFvKdmNaDu+a/9pIxBkNKVWdKx2JR0VRFIaUxxpxISWtkJcoNuERhW2xYa6YvtFp4ig==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      typescript: ^5.1.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
-  '@remix-run/react@2.12.1':
-    resolution: {integrity: sha512-+AFR6oCcAndlUZvr42dNrY2zprhf5Yo5Wl7TBocO3YPmwLkdrzJz+e8Sezk25qgHBB9cCTigt+yyliXmsZ1mpg==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
@@ -3095,13 +3084,6 @@ packages:
       react-router: '>=7.0.0-pre.0'
       vite: '>=5.0.0'
 
-  react-router-dom@6.26.2:
-    resolution: {integrity: sha512-z7YkaEW0Dy35T3/QKPYB1LjMK2R1fxnHO8kWpUMTBdfVzZrWOiY9a7CtN8HqdWtDUWd5FY6Dl8HFsqVwH4uOtQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-      react-dom: '>=16.8'
-
   react-router-hono-server@https://pkg.pr.new/rphlmr/react-router-hono-server@10.tgz:
     resolution: {tarball: https://pkg.pr.new/rphlmr/react-router-hono-server@10.tgz}
     version: 0.2.0
@@ -3111,12 +3093,6 @@ packages:
       react-router: ^7.0.0-pre.0
       remix-hono: ^0.0.16
       vite: ^5.0.0
-
-  react-router@6.26.2:
-    resolution: {integrity: sha512-tvN1iuT03kHgOFnLPfLJ8V95eijteveqdOSk+srqfePtQvqCExB8eHOYnlilbOcyJyKnYkr1vJvf7YqotAJu1A==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
 
   react-router@7.0.0-pre.6:
     resolution: {integrity: sha512-ln9gXs3ilZLGdggPetKYWzxrmMNykTipWxSXHUcB0qSJECkPTe3NcKo8fJx6dQfS4gS1zhCXGpHWRVasinnxOw==}
@@ -3171,6 +3147,7 @@ packages:
 
   remix-hono@0.0.16:
     resolution: {integrity: sha512-IPooI2E0eSFRV9wAgTzpsklSoOyij6Nsk6ANIugGhD9vYlovbYb2BT+siz++sLzWseZSPEtIzx/LBel203jBfQ==}
+    version: 0.0.16
     peerDependencies:
       '@remix-run/cloudflare': ^2.0.0
       i18next: ^23.0.0
@@ -3186,23 +3163,21 @@ packages:
       zod:
         optional: true
 
-  remix-i18next@6.4.1:
-    resolution: {integrity: sha512-Ma4ESNj8uZmm/Fjq2ZHEbsGvYYO2rV1BtqwIFPAYUeitBaED+r0pNXktUzvsHEanvbFOZPAhEcp5f17vDslmeA==}
+  remix-i18next@https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17:
+    resolution: {tarball: https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17}
+    version: 6.4.1
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@remix-run/cloudflare': ^2.0.0
-      '@remix-run/deno': ^2.0.0
-      '@remix-run/node': ^2.0.0
-      '@remix-run/react': ^2.0.0
+      '@react-router/cloudflare': '>=7.0.0-pre.0'
+      '@react-router/node': '>=7.0.0-pre.0'
       i18next: ^23.1.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-i18next: ^13.0.0 || ^14.0.0 || ^15.0.0
+      react-router: '>=7.0.0-pre.0'
     peerDependenciesMeta:
-      '@remix-run/cloudflare':
+      '@react-router/cloudflare':
         optional: true
-      '@remix-run/deno':
-        optional: true
-      '@remix-run/node':
+      '@react-router/node':
         optional: true
 
   resolve-from@4.0.0:
@@ -4983,18 +4958,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.3
 
-  '@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)':
-    dependencies:
-      '@remix-run/router': 1.19.2
-      '@remix-run/server-runtime': 2.12.1(typescript@5.6.3)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.26.2(react@18.3.1)
-      react-router-dom: 6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      turbo-stream: 2.4.0
-    optionalDependencies:
-      typescript: 5.6.3
-
   '@remix-run/router@1.19.2': {}
 
   '@remix-run/server-runtime@2.12.1(typescript@5.6.3)':
@@ -6753,31 +6716,19 @@ snapshots:
       - '@types/react-dom'
       - supports-color
 
-  react-router-dom@6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      '@remix-run/router': 1.19.2
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.26.2(react@18.3.1)
-
-  react-router-hono-server@https://pkg.pr.new/rphlmr/react-router-hono-server@10.tgz(@remix-run/node@2.12.1(typescript@5.6.3))(hono@4.6.3)(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(remix-hono@0.0.16(i18next@23.15.2)(remix-i18next@6.4.1(@remix-run/node@2.12.1(typescript@5.6.3))(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8))(vite@5.4.8(@types/node@22.7.5)):
+  react-router-hono-server@https://pkg.pr.new/rphlmr/react-router-hono-server@10.tgz(@remix-run/node@2.12.1(typescript@5.6.3))(hono@4.6.3)(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(remix-hono@0.0.16(i18next@23.15.2)(remix-i18next@https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17(@react-router/node@7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8))(vite@5.4.8(@types/node@22.7.5)):
     dependencies:
       '@hono/node-server': 1.13.1(hono@4.6.3)
       '@hono/vite-dev-server': 0.13.1(hono@4.6.3)
       '@remix-run/node': 2.12.1(typescript@5.6.3)
       hono: 4.6.3
       react-router: 7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      remix-hono: 0.0.16(i18next@23.15.2)(remix-i18next@6.4.1(@remix-run/node@2.12.1(typescript@5.6.3))(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8)
+      remix-hono: 0.0.16(i18next@23.15.2)(remix-i18next@https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17(@react-router/node@7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8)
       vite: 5.4.8(@types/node@22.7.5)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
-
-  react-router@6.26.2(react@18.3.1):
-    dependencies:
-      '@remix-run/router': 1.19.2
-      react: 18.3.1
 
   react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -6835,26 +6786,26 @@ snapshots:
 
   regenerator-runtime@0.14.1: {}
 
-  remix-hono@0.0.16(i18next@23.15.2)(remix-i18next@6.4.1(@remix-run/node@2.12.1(typescript@5.6.3))(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8):
+  remix-hono@0.0.16(i18next@23.15.2)(remix-i18next@https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17(@react-router/node@7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8):
     dependencies:
       '@remix-run/server-runtime': 2.12.1(typescript@5.6.3)
       hono: 4.6.3
       pretty-cache-header: 1.0.0
     optionalDependencies:
       i18next: 23.15.2
-      remix-i18next: 6.4.1(@remix-run/node@2.12.1(typescript@5.6.3))(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      remix-i18next: https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17(@react-router/node@7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       zod: 3.23.8
     transitivePeerDependencies:
       - typescript
 
-  remix-i18next@6.4.1(@remix-run/node@2.12.1(typescript@5.6.3))(@remix-run/react@2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
+  remix-i18next@https://pkg.pr.new/AlemTuzlak/remix-i18next@047de17(@react-router/node@7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(i18next@23.15.2)(react-i18next@15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@remix-run/react': 2.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
       i18next: 23.15.2
       react: 18.3.1
       react-i18next: 15.0.2(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-router: 7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     optionalDependencies:
-      '@remix-run/node': 2.12.1(typescript@5.6.3)
+      '@react-router/node': 7.0.0-pre.6(react-router@7.0.0-pre.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3)
 
   resolve-from@4.0.0: {}
 
