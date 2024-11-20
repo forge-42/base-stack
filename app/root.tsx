@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next"
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 import type { LinksFunction } from "react-router"
 import { useChangeLanguage } from "remix-i18next/react"
-import type * as Route from "./+types.root"
+import type { Route } from "./+types/root"
 import { LanguageSwitcher } from "./library/language-switcher"
 import tailwindcss from "./tailwind.css?url"
 

@@ -21,7 +21,8 @@
 		"rules": {
 			"recommended": true,
 			"suspicious": {
-				"recommended": true
+				"recommended": true,
+				"noConsole": "error"
 			},
 			"style": {
 				"recommended": true
@@ -36,7 +37,11 @@
 				"recommended": true
 			},
 			"correctness": {
-				"recommended": true
+				"recommended": true,
+				"noUnusedImports": "error",
+				"noUnusedVariables": "error",
+				"noUnusedLabels": "error",
+				"noUnusedFunctionParameters": "error"
 			},
 			"a11y": {
 				"recommended": true

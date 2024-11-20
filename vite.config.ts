@@ -1,6 +1,6 @@
 import { reactRouter } from "@react-router/dev/vite"
+import { reactRouterDevTools } from "react-router-devtools"
 import { devServer } from "react-router-hono-server/dev"
-import { remixDevTools } from "remix-development-tools"
 import { defineConfig } from "vite"
 import { iconsSpritesheet } from "vite-plugin-icons-spritesheet"
 import tsconfigPaths from "vite-tsconfig-paths"
@@ -10,7 +10,7 @@ export default defineConfig({
 		devServer({
 			exclude: [/^\/(resources)\/.+/],
 		}),
-		remixDevTools(),
+		reactRouterDevTools(),
 		reactRouter(),
 		tsconfigPaths(),
 		iconsSpritesheet({

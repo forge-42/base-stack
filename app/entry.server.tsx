@@ -64,7 +64,7 @@ export default async function handleRequest(
 				},
 				onError(error: unknown) {
 					didError = true
-
+					// biome-ignore lint/suspicious/noConsole: We console log the error
 					console.error(error)
 				},
 			}

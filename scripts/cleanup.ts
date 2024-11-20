@@ -18,6 +18,8 @@ const removeAllReadmeFromApp = async (currentDirectory: string) => {
 	}
 }
 
+const log = (message: string) => console.log(chalk.green(message))
+
 const removeTheCleanupFromPackageJsonAndScripts = async () => {
 	const packageJson = JSON.parse(await fs.readFile("package.json", { encoding: "utf-8" }))
 	packageJson.scripts.cleanup = undefined
@@ -25,7 +27,7 @@ const removeTheCleanupFromPackageJsonAndScripts = async () => {
 
 	await fs.writeFile("package.json", JSON.stringify(packageJson, null, 2), "utf-8")
 
-	console.log(chalk.green("Cleanup script is removed from package.json"))
+	log(chalk.green("Cleanup script is removed from package.json"))
 	await fs.unlink("scripts/cleanup.ts")
 }
 
@@ -51,14 +53,14 @@ export default function Index() {
 }
 `
 	await fs.writeFile("app/routes/_index.tsx", file, "utf-8")
-	console.log(chalk.green("Index route is reverted to empty state"))
+	log(chalk.green("Index route is reverted to empty state"))
 }
 
 const removeForgeAssets = async () => {
 	await fs.unlink("public/logo.png")
 	await fs.unlink("public/base-stack.png")
 	await fs.unlink("public/banner.png")
-	console.log(chalk.green("Forge assets are removed from public directory"))
+	log(chalk.green("Forge assets are removed from public directory"))
 }
 
 const runCleanup = async () => {
@@ -66,7 +68,7 @@ const runCleanup = async () => {
 	await revertIndexRoute()
 	await removeAllReadmeFromApp(appDirectory).then(async () => {
 		await fs.unlink("scripts/README.md")
-		console.log(chalk.green("All README.md files are removed from app directory"))
+		log(chalk.green("All README.md files are removed from app directory"))
 	})
 	removeTheCleanupFromPackageJsonAndScripts()
 }

@@ -5,6 +5,8 @@ import prompt from "prompt"
 // add all the env you wish here
 const ENVIRONMENTS = ["stage", "prod", "test"]
 
+const log = (message: string) => console.log(chalk.green(message))
+
 const getEnvInfo = () => {
 	// Gets the environment from the command line arguments if set, otherwise defaults to dev
 	const env = process.argv.find((arg) => ENVIRONMENTS.includes(arg)) ?? ""
@@ -18,13 +20,13 @@ const getEnvInfo = () => {
 const setupEnv = () => {
 	const { envName, path } = getEnvInfo()
 	dotenvx.config({ path })
-	console.log(`Environment loaded: ${chalk.green(envName)} from ${chalk.green(path)}`)
+	log(`Environment loaded: ${chalk.green(envName)} from ${chalk.green(path)}`)
 }
 
 // Helper method used to confirm the run
 const confirmRun = async () => {
 	const { envName } = getEnvInfo()
-	console.log(`About to execute the command in ${chalk.bold.red(envName)} environment.`)
+	log(`About to execute the command in ${chalk.bold.red(envName)} environment.`)
 
 	const { sure } = await prompt.get([
 		{
@@ -36,7 +38,7 @@ const confirmRun = async () => {
 	])
 
 	if (sure !== "y") {
-		console.log(chalk.bold.red("Command aborted!\n"))
+		log(chalk.bold.red("Command aborted!\n"))
 		process.exit(1)
 	}
 }

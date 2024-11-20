@@ -1,7 +1,6 @@
 import { generateRemixSitemap } from "@forge42/seo-tools/remix/sitemap"
 import type { LoaderFunctionArgs } from "react-router"
 import { createDomain } from "~/utils/http"
-import type * as Route from "./+types.sitemap.$lang[.]xml"
 
 export const loader = async ({ request, params }: LoaderFunctionArgs) => {
 	const domain = createDomain(request)

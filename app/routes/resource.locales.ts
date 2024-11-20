@@ -2,7 +2,7 @@ import { cacheHeader } from "pretty-cache-header"
 import { data } from "react-router"
 import { z } from "zod"
 import { resources } from "~/localization/resource"
-import type * as Route from "./+types.resource.locales"
+import type { Route } from "./+types/resource.locales"
 
 export async function loader({ request }: Route.LoaderArgs) {
 	const url = new URL(request.url)
