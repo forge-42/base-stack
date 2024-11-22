@@ -1,5 +1,8 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"ignore": ["app/library/icon/**/*"]
+	},
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -8,9 +11,6 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"formatWithErrors": false,
-		"indentStyle": "tab",
-		"lineEnding": "lf",
 		"lineWidth": 120
 	},
 	"organizeImports": {
