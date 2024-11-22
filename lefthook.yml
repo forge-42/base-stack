@@ -2,7 +2,7 @@ pre-commit:
   parallel: true
   commands:
     check:
-      run: pnpm run check -- --fix --no-errors-on-unmatched
+      run: pnpm run check --fix --no-errors-on-unmatched
       stage_fixed: true
     typecheck:
       run: pnpm run typecheck
