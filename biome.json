@@ -47,7 +47,8 @@
 				"recommended": true
 			},
 			"nursery": {
-				"recommended": true
+				"recommended": true,
+				"noProcessEnv": "error"
 			}
 		}
 	},

@@ -18,6 +18,7 @@ export default defineConfig({
 			outputDir: "./app/library/icon/icons",
 			fileName: "icon.svg",
 			withTypes: true,
+			formatter: "biome",
 		}),
 	],
 	build: {

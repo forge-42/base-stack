@@ -4,7 +4,8 @@ import { z } from "zod"
 import { resources } from "~/localization/resource"
 import type { Route } from "./+types/resource.locales"
 
-export async function loader({ request }: Route.LoaderArgs) {
+export async function loader({ request, context }: Route.LoaderArgs) {
+	const { env } = context
 	const url = new URL(request.url)
 
 	const lng = z
@@ -24,7 +25,7 @@ export async function loader({ request }: Route.LoaderArgs) {
 	const headers = new Headers()
 
 	// On production, we want to add cache headers to the response
-	if (process.env.APP_DEPLOYMENT_ENV === "production") {
+	if (env.APP_DEPLOYMENT_ENV === "production") {
 		headers.set(
 			"Cache-Control",
 			cacheHeader({

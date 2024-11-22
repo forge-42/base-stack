@@ -4,5 +4,5 @@
 	"remix": true,
 	"project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}", "vite.config.ts"],
 	"ignore": ["app/library/icon/icons/types.ts"],
-	"ignoreDependencies": ["virtual:react-router", "lefthook"]
+	"ignoreDependencies": ["react-router-devtools","vite-plugin-icons-spritesheet","vite-tsconfig-paths"]
 }

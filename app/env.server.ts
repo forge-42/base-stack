@@ -2,7 +2,7 @@ import { z } from "zod"
 
 const envSchema = z.object({
 	NODE_ENV: z.enum(["development", "production", "test"]),
-	DEPLOYMENT_ENV: z.enum(["staging", "production"]),
+	APP_DEPLOYMENT_ENV: z.enum(["staging", "production"]),
 })
 
 type APP_ENV = z.infer<typeof envSchema>
@@ -13,6 +13,7 @@ let env: APP_ENV
  * @returns Initialized env vars
  */
 export const initEnv = () => {
+	// biome-ignore lint/nursery/noProcessEnv: This should be the only place to use process.env directly
 	const envData = envSchema.safeParse(process.env)
 
 	if (!envData.success) {
