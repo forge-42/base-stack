@@ -25,6 +25,7 @@ export default defineConfig({
 	},
 	server: {
 		open: true,
-		port: 4280,
+		// biome-ignore lint/nursery/noProcessEnv: Its ok to use process.env here
+		port: Number(process.env.PORT || 4280),
 	},
 })
