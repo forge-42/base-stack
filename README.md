@@ -7,7 +7,7 @@
 # Welcome to Forge 42 base-stack
 
 This is a base-stack for Forge 42 projects. This stack is a starting point for all Forge 42 stacks with more
-advanced features. This is an ESM Vite stack with Remix.run.
+advanced features. This is an ESM Vite stack with Remix.run / React Router v7.
 
 It includes a basic setup for a project with Remix.run and:
 - TypeScript
@@ -20,7 +20,7 @@ It includes a basic setup for a project with Remix.run and:
 - Icons spritesheet generator
 - lefthook hooks
 - CI checks for quality control
-- remix-development-tools
+- react-router-devtools
 - Hono server
 - .env var handling for server and client
 - SEO robots.txt, sitemap-index and sitemap built in.
@@ -81,6 +81,6 @@ After it is run it will remove itself from the package.json.
 
 5. Start the development server:
 ```bash
-npm run dev
+pnpm run dev
 ```
 6. Happy coding!
