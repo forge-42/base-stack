@@ -22,10 +22,12 @@ jobs:
      - run: biome ci . --reporter=github
 
   typecheck:
+    needs: lint
     name: 🔎 Type check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version-file: "package.json"
@@ -34,10 +36,12 @@ jobs:
       - run: pnpm run typecheck
 
   vitest:
+    needs: typecheck
     name: ⚡ Unit Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version-file: "package.json"
