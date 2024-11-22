@@ -108,6 +108,8 @@ export const server = await createHonoServer({
 	configure(server) {
 		server.use("*", i18next(i18nextOpts))
 	},
+	// biome-ignore lint/nursery/noProcessEnv: Its ok to use it here
+	port: Number(process.env.PORT) || 3000,
 	defaultLogger: false,
 	getLoadContext,
 })
