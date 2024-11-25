@@ -48,8 +48,8 @@ importers:
         specifier: 7.0.1
         version: 7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-hono-server:
-        specifier: https://pkg.pr.new/rphlmr/react-router-hono-server@18
-        version: https://pkg.pr.new/rphlmr/react-router-hono-server@18(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@5.4.11(@types/node@22.9.1))
+        specifier: 2.0.0
+        version: 2.0.0(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@5.4.11(@types/node@22.9.1))
       remix-hono:
         specifier: 0.0.16
         version: 0.0.16(i18next@23.15.2)(remix-i18next@7.0.0(i18next@23.15.2)(react-i18next@15.1.1(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8)
@@ -2622,9 +2622,8 @@ packages:
       react-router: '>=7.0.0'
       vite: '>=5.0.0'
 
-  react-router-hono-server@https://pkg.pr.new/rphlmr/react-router-hono-server@18:
-    resolution: {tarball: https://pkg.pr.new/rphlmr/react-router-hono-server@18}
-    version: 2.0.0
+  react-router-hono-server@2.0.0:
+    resolution: {integrity: sha512-/8NES9+768c+R418j9+ntRN7DJK0Aa2CdOgSGFGcrBjGr+J5SW/lKPOg6QE0A0IbRFVkRHyLrhepO6Eh0w9OaQ==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     peerDependencies:
@@ -5545,7 +5544,7 @@ snapshots:
       - '@types/react-dom'
       - supports-color
 
-  react-router-hono-server@https://pkg.pr.new/rphlmr/react-router-hono-server@18(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@5.4.11(@types/node@22.9.1)):
+  react-router-hono-server@2.0.0(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@5.4.11(@types/node@22.9.1)):
     dependencies:
       '@drizzle-team/brocli': 0.11.0
       '@hono/node-server': 1.13.7(hono@4.6.12)
