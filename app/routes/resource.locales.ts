@@ -1,5 +1,4 @@
 import { cacheHeader } from "pretty-cache-header"
-import { data } from "react-router"
 import { z } from "zod"
 import { resources } from "~/localization/resource"
 import type { Route } from "./+types/resource.locales"
@@ -37,5 +36,5 @@ export async function loader({ request, context }: Route.LoaderArgs) {
 		)
 	}
 
-	return data(namespaces[ns], { headers })
+	return Response.json(namespaces[ns], { headers })
 }

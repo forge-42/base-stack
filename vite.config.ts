@@ -1,17 +1,19 @@
 import { reactRouter } from "@react-router/dev/vite"
 import { reactRouterDevTools } from "react-router-devtools"
-import { devServer } from "react-router-hono-server/dev"
+import { reactRouterHonoServer } from "react-router-hono-server/dev"
 import { defineConfig } from "vite"
 import { iconsSpritesheet } from "vite-plugin-icons-spritesheet"
 import tsconfigPaths from "vite-tsconfig-paths"
 
 export default defineConfig({
 	plugins: [
-		devServer({
-			exclude: [/^\/(resources)\/.+/],
-		}),
 		reactRouterDevTools(),
 		reactRouter(),
+		reactRouterHonoServer({
+			dev:{
+				exclude: [/^\/(resources)\/.+/],
+			}
+		}),
 		tsconfigPaths(),
 		iconsSpritesheet({
 			inputDir: "./resources/icons",
@@ -20,9 +22,6 @@ export default defineConfig({
 			withTypes: true,
 		}),
 	],
-	build: {
-		target: "esnext",
-	},
 	server: {
 		open: true,
 		// biome-ignore lint/nursery/noProcessEnv: Its ok to use process.env here
