@@ -1,7 +1,18 @@
 {
 	"$schema": "https://unpkg.com/knip@5/schema.json",
-	"entry": ["scripts/*.{ts,js}", "app/routes.ts","vite.config.ts", "app/server/*.ts"],
+	"entry": [
+		"scripts/*.{ts,js}",
+		"app/routes.ts",
+		"vite.config.ts",
+		"app/server/*.ts"
+	],
 	"remix": true,
-	"project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}", "vite.config.ts"],
-	"ignore": ["app/library/icon/icons/types.ts", "app/server"]
+	"lefthook": true,
+	"project": [
+		"**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
+		"vite.config.ts"
+	],
+	"ignore": [
+		"app/library/icon/icons/types.ts"
+	]
 }
