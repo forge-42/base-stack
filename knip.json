@@ -12,6 +12,9 @@
 		"**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
 		"vite.config.ts"
 	],
+	"ignoreDependencies": [
+		"tailwindcss"
+	],
 	"ignore": [
 		"app/library/icon/icons/types.ts"
 	]

@@ -4,9 +4,11 @@ import { reactRouterHonoServer } from "react-router-hono-server/dev"
 import { defineConfig } from "vite"
 import { iconsSpritesheet } from "vite-plugin-icons-spritesheet"
 import tsconfigPaths from "vite-tsconfig-paths"
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
 	plugins: [
+		tailwindcss(),
 		reactRouterDevTools(),
 		reactRouter(),
 		reactRouterHonoServer({
