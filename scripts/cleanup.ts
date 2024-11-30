@@ -60,7 +60,6 @@ const removeForgeAssets = async () => {
 	await fs.unlink("public/logo.png")
 	await fs.unlink("public/base-stack.png")
 	await fs.unlink("public/banner.png")
-	await fs.unlink("public/banner.png")
 	log(chalk.green("Forge assets are removed from public directory"))
 }
 
