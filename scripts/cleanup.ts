@@ -47,7 +47,6 @@ export default function Index() {
   return (
     <div>
       <h1>{t("hi")}</h1>
-      <p>{t("welcome")}</p>
     </div>
   );
 }
