@@ -23,9 +23,7 @@ describe("Home route", () => {
 		).not.toBeNull()
 	})
 
-	it("should render the home page text properly in bosnian", async ({
-		renderStub
-	}) => {
+	it("should render the home page text properly in bosnian", async ({ renderStub }) => {
 		const { container } = await renderStub({
 			entries: [
 				{
