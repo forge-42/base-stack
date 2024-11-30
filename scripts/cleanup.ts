@@ -60,6 +60,7 @@ const removeForgeAssets = async () => {
 	await fs.unlink("public/logo.png")
 	await fs.unlink("public/base-stack.png")
 	await fs.unlink("public/banner.png")
+	await fs.unlink("public/banner.png")
 	log(chalk.green("Forge assets are removed from public directory"))
 }
 
@@ -68,6 +69,7 @@ const runCleanup = async () => {
 	await revertIndexRoute()
 	await removeAllReadmeFromApp(appDirectory).then(async () => {
 		await fs.unlink("scripts/README.md")
+		await fs.unlink("tests/README.md")
 		log(chalk.green("All README.md files are removed from app directory"))
 	})
 	removeTheCleanupFromPackageJsonAndScripts()
