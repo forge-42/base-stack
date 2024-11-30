@@ -10,8 +10,7 @@ describe("Home route", () => {
 				{
 					id: "home",
 					path: "/",
-					Component: Module.default,
-					...Module,
+					Component: Module.default
 				},
 			],
 		})
@@ -29,8 +28,7 @@ describe("Home route", () => {
 				{
 					id: "home",
 					path: "/",
-					Component: Module.default,
-					...Module,
+					Component: Module.default
 				},
 			],
 			i18n: {
