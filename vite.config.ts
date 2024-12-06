@@ -10,8 +10,7 @@ export default defineConfig({
 	plugins: [
 		// Run the react-compiler on .tsx files
 		babel({
-			include: ["./app/**/*"],
-			filter: name => name.endsWith("tsx"),
+			filter: /\.tsx?$/,
 			babelConfig: {
 				presets: ["@babel/preset-typescript"],
 				plugins: ["babel-plugin-react-compiler"]
