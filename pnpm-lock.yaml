@@ -51,8 +51,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@5.4.11(@types/node@22.9.1))
       remix-hono:
-        specifier: 0.0.16
-        version: 0.0.16(i18next@23.15.2)(remix-i18next@7.0.0(i18next@23.15.2)(react-i18next@15.1.1(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8)
+        specifier: 0.0.17
+        version: 0.0.17(hono@4.6.12)(i18next@23.15.2)(pretty-cache-header@1.0.0)(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(remix-i18next@7.0.0(i18next@23.15.2)(react-i18next@15.1.1(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(zod@3.23.8)
       remix-i18next:
         specifier: 7.0.0
         version: 7.0.0(i18next@23.15.2)(react-i18next@15.1.1(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -3400,17 +3400,22 @@ packages:
     resolution: {integrity: sha512-8acYXXTI0AkQv6RAOjE3vOaIXZkT9wo4LOFbBKYQEEnnMNBpKqdUrI6S4NT0KPIo/WVvJ5tE/X5LF/TQUf0ekw==}
     engines: {node: '>=8'}
 
-  remix-hono@0.0.16:
-    resolution: {integrity: sha512-IPooI2E0eSFRV9wAgTzpsklSoOyij6Nsk6ANIugGhD9vYlovbYb2BT+siz++sLzWseZSPEtIzx/LBel203jBfQ==}
+  remix-hono@0.0.17:
+    resolution: {integrity: sha512-j4mkUTwAvD1dJ69DhxBMOm1zPj6wiDY2/gF1aRT8LFffuZ3SAU00ZeRzl0XHn21XxD4RTRR60J5BqZsUmhj8ZA==}
     peerDependencies:
-      '@remix-run/cloudflare': ^2.0.0
+      '@react-router/cloudflare': ^7.0.1
+      hono: ^4.6.12
       i18next: ^23.0.0
-      remix-i18next: ^6.0.0
+      pretty-cache-header: ^1.0.0
+      react-router: ^7.0.1
+      remix-i18next: ^7.0.0
       zod: ^3.0.0
     peerDependenciesMeta:
-      '@remix-run/cloudflare':
+      '@react-router/cloudflare':
         optional: true
       i18next:
+        optional: true
+      react-router:
         optional: true
       remix-i18next:
         optional: true
@@ -5121,7 +5126,8 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.3
 
-  '@remix-run/router@1.21.0': {}
+  '@remix-run/router@1.21.0':
+    optional: true
 
   '@remix-run/server-runtime@2.15.0(typescript@5.6.3)':
     dependencies:
@@ -5134,6 +5140,7 @@ snapshots:
       turbo-stream: 2.4.0
     optionalDependencies:
       typescript: 5.6.3
+    optional: true
 
   '@rollup/rollup-android-arm-eabi@4.27.4':
     optional: true
@@ -5409,7 +5416,8 @@ snapshots:
       loupe: 3.1.2
       tinyrainbow: 1.2.0
 
-  '@web3-storage/multipart-parser@1.0.0': {}
+  '@web3-storage/multipart-parser@1.0.0':
+    optional: true
 
   abbrev@2.0.0: {}
 
@@ -5705,7 +5713,8 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  cookie@0.6.0: {}
+  cookie@0.6.0:
+    optional: true
 
   cookie@1.0.2: {}
 
@@ -7334,17 +7343,15 @@ snapshots:
     dependencies:
       rc: 1.2.8
 
-  remix-hono@0.0.16(i18next@23.15.2)(remix-i18next@7.0.0(i18next@23.15.2)(react-i18next@15.1.1(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(zod@3.23.8):
+  remix-hono@0.0.17(hono@4.6.12)(i18next@23.15.2)(pretty-cache-header@1.0.0)(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(remix-i18next@7.0.0(i18next@23.15.2)(react-i18next@15.1.1(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1))(zod@3.23.8):
     dependencies:
-      '@remix-run/server-runtime': 2.15.0(typescript@5.6.3)
       hono: 4.6.12
       pretty-cache-header: 1.0.0
     optionalDependencies:
       i18next: 23.15.2
+      react-router: 7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       remix-i18next: 7.0.0(i18next@23.15.2)(react-i18next@15.1.1(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       zod: 3.23.8
-    transitivePeerDependencies:
-      - typescript
 
   remix-i18next@7.0.0(i18next@23.15.2)(react-i18next@15.1.1(i18next@23.15.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-router@7.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -7507,7 +7514,8 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  source-map@0.7.4: {}
+  source-map@0.7.4:
+    optional: true
 
   spdx-correct@3.2.0:
     dependencies:
