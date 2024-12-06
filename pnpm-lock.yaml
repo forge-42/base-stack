@@ -67,6 +67,9 @@ importers:
         specifier: ^4.24.0
         version: 4.27.4
     devDependencies:
+      '@babel/preset-typescript':
+        specifier: 7.26.0
+        version: 7.26.0(@babel/core@7.26.0)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -103,6 +106,9 @@ importers:
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.49)
+      babel-plugin-react-compiler:
+        specifier: 19.0.0-beta-df7b47d-20241124
+        version: 19.0.0-beta-df7b47d-20241124
       chalk:
         specifier: 5.3.0
         version: 5.3.0
@@ -142,6 +148,9 @@ importers:
       vite:
         specifier: 5.4.11
         version: 5.4.11(@types/node@22.9.1)
+      vite-plugin-babel:
+        specifier: 1.3.0
+        version: 1.3.0(@babel/core@7.26.0)(vite@5.4.11(@types/node@22.9.1))
       vite-plugin-icons-spritesheet:
         specifier: 2.2.1
         version: 2.2.1(vite@5.4.11(@types/node@22.9.1))
@@ -1645,6 +1654,9 @@ packages:
   babel-plugin-macros@3.1.0:
     resolution: {integrity: sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==}
     engines: {node: '>=10', npm: '>=6'}
+
+  babel-plugin-react-compiler@19.0.0-beta-df7b47d-20241124:
+    resolution: {integrity: sha512-93iSASR20HNsotcOTQ+KPL0zpgfRFVWL86AtXpmHp995HuMVnC9femd8Winr3GxkPEh8lEOyaw3nqY4q2HUm5w==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -3897,6 +3909,12 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
+  vite-plugin-babel@1.3.0:
+    resolution: {integrity: sha512-C5WKX0UwvQKH8WD2GiyWUjI62UBfLbfUhiLexnIm4asLdENX5ymrRipFlBnGeVxoOaYgTL5dh5KW6YDGpWsR8A==}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+      vite: ^2.7.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
+
   vite-plugin-icons-spritesheet@2.2.1:
     resolution: {integrity: sha512-j/sGGQfPgPp802TgbYLspry8fk6w13CXIaDlGgn4jUcRILpNWWcFb7vXrGVrF4cNkHfwcDXf69+RvdYv6ijeIw==}
     peerDependencies:
@@ -5503,6 +5521,10 @@ snapshots:
       '@babel/runtime': 7.26.0
       cosmiconfig: 7.1.0
       resolve: 1.22.8
+
+  babel-plugin-react-compiler@19.0.0-beta-df7b47d-20241124:
+    dependencies:
+      '@babel/types': 7.26.0
 
   balanced-match@1.0.2: {}
 
@@ -7860,6 +7882,11 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+
+  vite-plugin-babel@1.3.0(@babel/core@7.26.0)(vite@5.4.11(@types/node@22.9.1)):
+    dependencies:
+      '@babel/core': 7.26.0
+      vite: 5.4.11(@types/node@22.9.1)
 
   vite-plugin-icons-spritesheet@2.2.1(vite@5.4.11(@types/node@22.9.1)):
     dependencies:
