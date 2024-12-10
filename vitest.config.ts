@@ -6,9 +6,9 @@ export default defineConfig({
 	test: {
 		globals: true,
 		css: true,
-		root: "app",
 		coverage: {
 			all: false,
+			include: ["app/**"],
 			reporter: ["text", "json-summary", "json"],
 			reportOnFailure: true,
 		},
