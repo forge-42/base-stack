@@ -16,7 +16,7 @@
 		"start": "NODE_ENV=production node ./build/server/index.js",
 		"test": "vitest run --browser.headless",
 		"test:ui": "vitest",
-		"test:cov": "vitest run --coverage --browser.headless",
+		"test:cov": "vitest run --coverage ",
 		"typecheck": "tsc",
 		"validate": "pnpm run check && pnpm run typecheck && pnpm run test && pnpm run check:unused",
 		"check": "biome check .",
