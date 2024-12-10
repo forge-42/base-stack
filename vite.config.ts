@@ -2,9 +2,9 @@ import { reactRouter } from "@react-router/dev/vite"
 import { reactRouterDevTools } from "react-router-devtools"
 import { reactRouterHonoServer } from "react-router-hono-server/dev"
 import { defineConfig } from "vite"
+import babel from "vite-plugin-babel"
 import { iconsSpritesheet } from "vite-plugin-icons-spritesheet"
 import tsconfigPaths from "vite-tsconfig-paths"
-import babel from "vite-plugin-babel";
 
 export default defineConfig({
 	plugins: [
@@ -13,8 +13,8 @@ export default defineConfig({
 			filter: /\.tsx?$/,
 			babelConfig: {
 				presets: ["@babel/preset-typescript"],
-				plugins: ["babel-plugin-react-compiler"]
-			}
+				plugins: ["babel-plugin-react-compiler"],
+			},
 		}),
 		reactRouterDevTools(),
 		reactRouter(),
