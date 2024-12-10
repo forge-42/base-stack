@@ -1,5 +1,8 @@
 import { defineWorkspace } from "vitest/config"
 
+// biome-ignore lint/nursery/noProcessEnv: Figure out the bug with --browser.headless, should work without this at all
+const isHeadless= process.argv.includes("--browser.headless")  || !!process.env.CI;
+
 export default defineWorkspace([
 	{
 		extends: "./vitest.config.ts",
@@ -25,9 +28,8 @@ export default defineWorkspace([
 			setupFiles: ["./tests/setup.browser.tsx"],
 			name: "browser tests",
 			browser: {
-				// biome-ignore lint/nursery/noProcessEnv: we want to use process.env here
-				headless: !!process.env.CI,
 				enabled: true,
+				headless: isHeadless,
 				name: "chromium",
 				provider: "playwright",
 				// https://playwright.dev
