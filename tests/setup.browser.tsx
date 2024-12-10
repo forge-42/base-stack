@@ -60,7 +60,7 @@ const renderHook = renderReactHook
 // We extend the global test context with our custom functions that we pass into the context in beforeEach
 declare module "vitest" {
 	export interface TestContext {
-		renderStub: typeof renderStub,
+		renderStub: typeof renderStub
 		renderHook: typeof renderHook
 	}
 }

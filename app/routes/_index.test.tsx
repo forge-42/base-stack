@@ -1,9 +1,7 @@
 import * as Module from "./_index"
 
 describe("Home route", () => {
-	it("should render the home page text properly in english", async ({
-		renderStub,
-	}) => {
+	it("should render the home page text properly in english", async ({ renderStub }) => {
 		const { getByText } = await renderStub({
 			entries: [
 				{
