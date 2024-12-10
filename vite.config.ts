@@ -10,9 +10,9 @@ export default defineConfig({
 		reactRouterDevTools(),
 		reactRouter(),
 		reactRouterHonoServer({
-			dev:{
+			dev: {
 				exclude: [/^\/(resources)\/.+/],
-			}
+			},
 		}),
 		tsconfigPaths(),
 		iconsSpritesheet({

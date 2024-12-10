@@ -1,12 +1,11 @@
 import "../app/tailwind.css"
-import * as Test from "@testing-library/react"
+import { renderHook as renderReactHook } from "@testing-library/react"
 import { createInstance } from "i18next"
-import preview from "jest-preview"
 import { I18nextProvider, initReactI18next } from "react-i18next"
 import { Outlet, type RoutesTestStubProps, createRoutesStub } from "react-router"
+import { render } from "vitest-browser-react"
 import i18n from "~/localization/i18n"
 import { type Language, type Namespace, resources } from "~/localization/resource"
-
 type StubRouteEntry = Parameters<typeof createRoutesStub>[0][0]
 
 const renderStub = async (args?: {
@@ -51,22 +50,24 @@ const renderStub = async (args?: {
 	// We generate the stub using the entries and props
 	const Stub = createRoutesStub(entries)
 	// We render the container so it can be used in tests
-	const container = Test.render(<Stub {...props} />)
+	const renderedScreen = render(<Stub {...props} />)
 
-	return { container }
+	return renderedScreen
 }
+
+const renderHook = renderReactHook
 
 // We extend the global test context with our custom functions that we pass into the context in beforeEach
 declare module "vitest" {
 	export interface TestContext {
-		renderStub: typeof renderStub
-		debug: typeof preview.debug
+		renderStub: typeof renderStub,
+		renderHook: typeof renderHook
 	}
 }
 // We pass in our custom functions to the test context
 beforeEach((ctx) => {
 	ctx.renderStub = renderStub
-	ctx.debug = preview.debug
+	ctx.renderHook = renderHook
 })
 
 // We clear all mocks after each test (optional, feel free to remove it)
