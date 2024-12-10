@@ -9,7 +9,8 @@ export default defineWorkspace([
 		test: {
 			name: "server tests",
 			environment: "node",
-			include: ["./**/*.server.test.{ts,tsx}"],
+			// Include generic .test files that should work anywhere and .server.test files for server only, ignore .browser.test
+			include: ["./**/*.server.test.{ts,tsx}","!./**.browser.test.{ts,tsx}","./**/*.test.{ts,tsx}"],
 		},
 	},
 	{
@@ -24,7 +25,8 @@ export default defineWorkspace([
 		},
 		test: {
 			includeTaskLocation: true,
-			include: ["./**.test.{ts,tsx}", "!./**.server.test.{ts,tsx}"],
+			// Include generic .test files that should work anywhere and .browser.test files for browser only, ignore .server.test
+			include: ["./**.test.{ts,tsx}","./**.browser.test.{ts,tsx}", "!./**.server.test.{ts,tsx}"],
 			setupFiles: ["./tests/setup.browser.tsx"],
 			name: "browser tests",
 			browser: {
