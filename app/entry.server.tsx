@@ -9,7 +9,8 @@ import i18n from "./localization/i18n" // your i18n configuration file
 import i18nextOpts from "./localization/i18n.server"
 import { resources } from "./localization/resource"
 
-const ABORT_DELAY = 5000
+// Reject all pending promises from handler functions after 10 seconds
+export const streamTimeout = 10000
 
 export default async function handleRequest(
 	request: Request,
@@ -38,7 +39,7 @@ export default async function handleRequest(
 
 		const { pipe, abort } = renderToPipeableStream(
 			<I18nextProvider i18n={instance}>
-				<ServerRouter abortDelay={ABORT_DELAY} context={context} url={request.url} />
+				<ServerRouter context={context} url={request.url} />
 			</I18nextProvider>,
 			{
 				[callbackName]: () => {
@@ -67,6 +68,8 @@ export default async function handleRequest(
 			}
 		)
 
-		setTimeout(abort, ABORT_DELAY)
+    // Abort the streaming render pass after 11 seconds so to allow the rejected
+    // boundaries to be flushed
+    setTimeout(abort, streamTimeout + 1000)
 	})
 }
