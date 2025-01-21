@@ -28,9 +28,7 @@ export default defineWorkspace([
 			name: "browser tests",
 			browser: {
 				enabled: true,
-				instances: [
-					{ browser: "chromium" },
-				],
+				instances: [{ browser: "chromium" }],
 				provider: "playwright",
 				// https://playwright.dev
 				providerOptions: {},
