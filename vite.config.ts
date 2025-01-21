@@ -8,14 +8,17 @@ import tsconfigPaths from "vite-tsconfig-paths"
 
 export default defineConfig({
 	plugins: [
-		// Run the react-compiler on .tsx files
-		babel({
-			filter: /\.tsx?$/,
-			babelConfig: {
-				presets: ["@babel/preset-typescript"],
-				plugins: ["babel-plugin-react-compiler"],
-			},
-		}),
+		// Run the react-compiler on .tsx files only when bundling
+		{
+			...babel({
+				filter: /\.tsx?$/,
+				babelConfig: {
+					presets: ["@babel/preset-typescript"],
+					plugins: ["babel-plugin-react-compiler"],
+				},
+			}),
+			apply: "build",
+		},
 		reactRouterDevTools(),
 		reactRouter(),
 		reactRouterHonoServer({
