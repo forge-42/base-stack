@@ -7,11 +7,13 @@
 		"app/library/icon/Icon.tsx"
 	],
 	"remix": true,
+	"lefthook": true,
 	"project": [
 		"**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"
 	],
 	"ignore": [
-		"app/library/icon/icons/types.ts"
+		"app/library/icon/icons/types.ts",
+		"react-router.config.ts"
 	],
 	"ignoreDependencies": [
 		"@babel/preset-typescript",
