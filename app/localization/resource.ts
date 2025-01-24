@@ -3,11 +3,13 @@ import english from "../../resources/locales/en/common.json"
 
 const languages = ["en", "bs"] as const
 export const supportedLanguages = [...languages]
-type Language = (typeof languages)[number]
+export type Language = (typeof languages)[number]
 
 type Resource = {
 	common: typeof english
 }
+
+export type Namespace = keyof Resource
 
 export const resources: Record<Language, Resource> = {
 	en: {

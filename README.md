@@ -9,7 +9,8 @@
 This is a base-stack for Forge 42 projects. This stack is a starting point for all Forge 42 stacks with more
 advanced features. This is an ESM Vite stack with Remix.run / React Router v7.
 
-It includes a basic setup for a project with Remix.run and:
+It includes a basic setup for a project with react-router v7 framework mode and:
+- React 19 & react-compiler
 - TypeScript
 - TailwindCSS
 - Vite

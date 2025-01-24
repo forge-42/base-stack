@@ -1,7 +1,7 @@
 {
 	"include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/**/.server/**/*.ts", ".react-router/types/**/*"],
 	"compilerOptions": {
-		"types": ["vitest/globals"],
+		"types": ["vitest/globals", "@vitest/browser/providers/playwright"],
 		"lib": ["DOM", "DOM.Iterable", "ES2023"],
 		"isolatedModules": true,
 		"esModuleInterop": true,

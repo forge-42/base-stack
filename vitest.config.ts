@@ -1,15 +1,14 @@
-import { defineConfig } from "vite"
 import tsconfigPaths from "vite-tsconfig-paths"
+import { defineConfig } from "vitest/config"
 
 export default defineConfig({
 	plugins: [tsconfigPaths()],
 	test: {
 		globals: true,
-		environment: "happy-dom",
-		setupFiles: ["./tests/setup.unit.ts"],
-		include: ["./app/**/*.test.{ts,tsx}"],
+		css: true,
 		coverage: {
-			include: ["app/**/*"],
+			all: false,
+			include: ["app/**"],
 			reporter: ["text", "json-summary", "json"],
 			reportOnFailure: true,
 		},

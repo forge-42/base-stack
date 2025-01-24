@@ -47,7 +47,6 @@ export default function Index() {
   return (
     <div>
       <h1>{t("hi")}</h1>
-      <p>{t("welcome")}</p>
     </div>
   );
 }
@@ -68,6 +67,7 @@ const runCleanup = async () => {
 	await revertIndexRoute()
 	await removeAllReadmeFromApp(appDirectory).then(async () => {
 		await fs.unlink("scripts/README.md")
+		await fs.unlink("tests/README.md")
 		log(chalk.green("All README.md files are removed from app directory"))
 	})
 	removeTheCleanupFromPackageJsonAndScripts()

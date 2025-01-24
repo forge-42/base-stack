@@ -47,6 +47,7 @@ jobs:
           node-version-file: "package.json"
           cache: "pnpm"
       - run: pnpm install --prefer-offline --frozen-lockfile
+      - run: pnpm exec playwright install chromium --with-deps
       - run: pnpm run test:cov
       - name: "Report Coverage"
         # Only works if you set `reportOnFailure: true` in your vite config as specified above
