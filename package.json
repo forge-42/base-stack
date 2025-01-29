@@ -33,7 +33,7 @@
 		"hono": "4.6.12",
 		"i18next": "24.2.1",
 		"i18next-browser-languagedetector": "8.0.0",
-		"i18next-fetch-backend": "6.0.0",
+		"i18next-http-backend": "3.0.2",
 		"isbot": "5.1.17",
 		"pretty-cache-header": "1.0.0",
 		"react": "19.0.0",

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse, useRouteError } from "react-router"
 import type { LinksFunction } from "react-router"
 import { useChangeLanguage } from "remix-i18next/react"
 import type { Route } from "./+types/root"
@@ -47,5 +47,23 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 				<Scripts />
 			</body>
 		</html>
+	)
+}
+
+export const ErrorBoundary = () => {
+	const error = useRouteError()
+	const { t } = useTranslation()
+
+	const errorStatusCode = isRouteErrorResponse(error) ? error.status : "500"
+
+	return (
+		<div className="placeholder-index relative h-full min-h-screen w-screen flex items-center justify-center dark:bg-white sm:pb-16 sm:pt-8">
+			<div className="relative mx-auto max-w-[90rem] sm:px-6 lg:px-8">
+				<div className="relative  min-h-72 flex flex-col justify-center sm:overflow-hidden sm:rounded-2xl p-1 md:p-4 lg:p-6">
+					<h1 className="text-center w-full text-red-600 text-2xl pb-2">{t(`error.${errorStatusCode}.title`)}</h1>
+					<p className="text-lg text-center w-full">{t(`error.${errorStatusCode}.description`)}</p>
+				</div>
+			</div>
+		</div>
 	)
 }
