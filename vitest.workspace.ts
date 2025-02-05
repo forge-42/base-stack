@@ -31,7 +31,7 @@ export default defineWorkspace([
 				instances: [{ browser: "chromium" }],
 				provider: "playwright",
 				// https://playwright.dev
-				providerOptions: {},
+				//providerOptions: {},
 			},
 		},
 	},
