@@ -4,11 +4,13 @@ import type { LinksFunction } from "react-router"
 import { useChangeLanguage } from "remix-i18next/react"
 import type { Route } from "./+types/root"
 import { LanguageSwitcher } from "./library/language-switcher"
+import { ClientHintCheck, getHints } from "./services/client-hints"
 import tailwindcss from "./tailwind.css?url"
 
-export async function loader({ context }: Route.LoaderArgs) {
+export async function loader({ context, request }: Route.LoaderArgs) {
 	const { lang, clientEnv } = context
-	return { lang, clientEnv }
+	const hints = getHints(request)
+	return { lang, clientEnv, hints }
 }
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: tailwindcss }]
@@ -20,7 +22,6 @@ export const handle = {
 export default function App({ loaderData }: Route.ComponentProps) {
 	const { lang, clientEnv } = loaderData
 	useChangeLanguage(lang)
-
 	return (
 		<>
 			<Outlet />
@@ -44,6 +45,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 				<LanguageSwitcher />
 				{children}
 				<ScrollRestoration />
+				<ClientHintCheck />
 				<Scripts />
 			</body>
 		</html>
