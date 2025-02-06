@@ -11,7 +11,7 @@ const LanguageSwitcher = () => {
 		<div className="flex gap-2 p-2 fixed top-0 right-0 w-min z-10">
 			{supportedLanguages.map((language) => (
 				<Link
-					className="text-blue-500 hover:underline transition-all"
+					className="text-blue-500 dark:text-white hover:underline transition-all"
 					key={language}
 					to={`${to}?lng=${language}`}
 					onClick={() => i18n.changeLanguage(language)}

@@ -7,7 +7,13 @@ describe("Home route", () => {
 				{
 					id: "home",
 					path: "/",
-					Component: Module.default,
+					Component: () =>
+						Module.default({
+							loaderData: { timezoneDate: "2021-01-01T00:00:00.000Z" },
+							params: {},
+							// biome-ignore lint/suspicious/noExplicitAny: Matches are not used
+							matches: [] as any,
+						}),
 				},
 			],
 		})
@@ -25,7 +31,14 @@ describe("Home route", () => {
 				{
 					id: "home",
 					path: "/",
-					Component: Module.default,
+
+					Component: () =>
+						Module.default({
+							loaderData: { timezoneDate: "2021-01-01T00:00:00.000Z" },
+							params: {},
+							// biome-ignore lint/suspicious/noExplicitAny: Matches are not used
+							matches: [] as any,
+						}),
 				},
 			],
 			i18n: {
