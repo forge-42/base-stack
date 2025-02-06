@@ -7,7 +7,9 @@ describe("convertTz Test suite", () => {
 		const convertedServerDate = convertTz(date, serverTz)
 		const userTz = "Europe/Berlin"
 		const convertedClientDate = convertTz(date, userTz)
-		const differenceInMinutes = Math.round(Math.abs(convertedClientDate.getTime() - convertedServerDate.getTime()) / 60000)
+		const differenceInMinutes = Math.round(
+			Math.abs(convertedClientDate.getTime() - convertedServerDate.getTime()) / 60000
+		)
 		expect(differenceInMinutes).toBe(60)
 	})
 
@@ -17,7 +19,9 @@ describe("convertTz Test suite", () => {
 		const convertedServerDate = convertTz(date, serverTz)
 		const userTz = "Europe/London"
 		const convertedClientDate = convertTz(date, userTz)
-		const differenceInMinutes = Math.round(Math.abs(convertedClientDate.getTime() - convertedServerDate.getTime()) / 60000)
+		const differenceInMinutes = Math.round(
+			Math.abs(convertedClientDate.getTime() - convertedServerDate.getTime()) / 60000
+		)
 		expect(differenceInMinutes).toBe(0)
 	})
 })
