@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next"
-import { Link, useNavigate } from "react-router"
+import { useNavigate } from "react-router"
 import { Icon } from "~/library/icon/Icon"
+import { Link } from "~/library/link"
 
 export default function Route404() {
 	const navigate = useNavigate()
