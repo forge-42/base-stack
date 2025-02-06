@@ -36,6 +36,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<html className="overflow-y-auto overflow-x-hidden" lang={i18n.language} dir={i18n.dir()}>
 			<head>
+				<ClientHintCheck />
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
@@ -45,7 +46,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 				<LanguageSwitcher />
 				{children}
 				<ScrollRestoration />
-				<ClientHintCheck />
 				<Scripts />
 			</body>
 		</html>
