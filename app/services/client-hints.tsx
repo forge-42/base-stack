@@ -13,13 +13,23 @@ export const { getHints, getClientHintCheckScript } = getHintUtils({
 	// add other hints here
 })
 
+/**
+ * @public
+ * Utility function used to get the time zone for the current users browser on either the client or the server.
+ *  */
 export const getTimeZone = (request?: Request) => getHints(request).timeZone
 
+/**
+ * @public
+ * Utility used to get the client hints for the current users browser.
+ * 	*/
 export function useHints() {
 	const requestInfo = useRouteLoaderData<Route.ComponentProps["loaderData"]>("root")
 	return requestInfo?.hints
 }
-
+/**
+ * Utility component used to check the client hints on the client and send them to the server.
+ */
 export function ClientHintCheck({ nonce }: { nonce?: string }) {
 	const { revalidate } = useRevalidator()
 	useEffect(() => subscribeToSchemeChange(() => revalidate()), [revalidate])
