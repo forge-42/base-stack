@@ -37,9 +37,6 @@ export default defineConfig({
 			formatter: "biome",
 		}),
 	],
-	build: {
-		assetsInlineLimit: 0,
-	},
 	server: {
 		open: true,
 		// biome-ignore lint/nursery/noProcessEnv: Its ok to use process.env here
