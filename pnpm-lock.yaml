@@ -15,8 +15,8 @@ importers:
         specifier: 1.3.0
         version: 1.3.0(typescript@5.7.3)
       '@react-router/node':
-        specifier: 7.1.5
-        version: 7.1.5(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+        specifier: 7.2.0
+        version: 7.2.0(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -48,27 +48,23 @@ importers:
         specifier: 15.4.0
         version: 15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-router:
-        specifier: 7.1.5
-        version: 7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 7.2.0
+        version: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-router-hono-server:
         specifier: 2.8.2
-        version: 2.8.2(miniflare@3.20250129.0)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3)
+        version: 2.8.2(miniflare@3.20250129.0)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3)
       remix-hono:
         specifier: 0.0.18
-        version: 0.0.18(hono@4.6.20)(i18next@24.2.2(typescript@5.7.3))(pretty-cache-header@1.0.0)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(remix-i18next@7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0))(zod@3.24.1)
+        version: 0.0.18(hono@4.6.20)(i18next@24.2.2(typescript@5.7.3))(pretty-cache-header@1.0.0)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(remix-i18next@7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0))(zod@3.24.1)
       remix-i18next:
         specifier: 7.0.2
-        version: 7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+        version: 7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
       tailwind-merge:
         specifier: 3.0.1
         version: 3.0.1
       zod:
         specifier: 3.24.1
         version: 3.24.1
-    optionalDependencies:
-      '@rollup/rollup-linux-x64-gnu':
-        specifier: ^4.34.3
-        version: 4.34.3
     devDependencies:
       '@babel/preset-typescript':
         specifier: 7.26.0
@@ -80,11 +76,11 @@ importers:
         specifier: 1.34.0
         version: 1.34.0
       '@react-router/dev':
-        specifier: 7.1.5
-        version: 7.1.5(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3)
+        specifier: 7.2.0
+        version: 7.2.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3)
       '@react-router/fs-routes':
-        specifier: 7.1.5
-        version: 7.1.5(@react-router/dev@7.1.5(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3))(typescript@5.7.3)
+        specifier: 7.2.0
+        version: 7.2.0(@react-router/dev@7.2.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3))(typescript@5.7.3)
       '@tailwindcss/vite':
         specifier: 4.0.3
         version: 4.0.3(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))
@@ -135,7 +131,7 @@ importers:
         version: 1.3.0
       react-router-devtools:
         specifier: 1.1.5
-        version: 1.1.5(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))
+        version: 1.1.5(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))
       tailwindcss:
         specifier: 4.0.3
         version: 4.0.3
@@ -163,6 +159,10 @@ importers:
       vitest-browser-react:
         specifier: 0.0.4
         version: 0.0.4(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(@vitest/browser@3.0.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(vitest@3.0.5)
+    optionalDependencies:
+      '@rollup/rollup-linux-x64-gnu':
+        specifier: ^4.34.3
+        version: 4.34.3
 
 packages:
 
@@ -1379,13 +1379,13 @@ packages:
   '@radix-ui/rect@1.1.0':
     resolution: {integrity: sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==}
 
-  '@react-router/dev@7.1.5':
-    resolution: {integrity: sha512-3YQAbaKQm4mxcd0jmbItr2Ik0GshEMmPpRAld7XhIymB50MklWSsgd+IJWcqSv8RVlNs1ZMxRC0maS3Hv/V19g==}
+  '@react-router/dev@7.2.0':
+    resolution: {integrity: sha512-GzSNGeWuhx6sMsnidCQAlCAephibUMC61xIAdsc6hBXWCJe/T9wUrvtnh2Xbcpr7BRZJtJN4UhI472ZURA6m9w==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     peerDependencies:
-      '@react-router/serve': ^7.1.5
-      react-router: ^7.1.5
+      '@react-router/serve': ^7.2.0
+      react-router: ^7.2.0
       typescript: ^5.1.0
       vite: ^5.1.0 || ^6.0.0
       wrangler: ^3.28.2
@@ -1397,21 +1397,21 @@ packages:
       wrangler:
         optional: true
 
-  '@react-router/fs-routes@7.1.5':
-    resolution: {integrity: sha512-Ncu8WHZNGKPXSKQZyoSRJsZaV9FnzbX3g/NRPzY88O7zwvURjebgMpq8K4rNdvbacTHg6/3umIFeCS0K9HdWPQ==}
+  '@react-router/fs-routes@7.2.0':
+    resolution: {integrity: sha512-vbXNCJ6Rd9ZhMpYzacz2bZjDi4UTgOtIktdcHG0oFUFS51DWvfzFo0h/7iyqT3r1QFKQ3wg+KhX5PEiksipeaQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@react-router/dev': ^7.1.5
+      '@react-router/dev': ^7.2.0
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
         optional: true
 
-  '@react-router/node@7.1.5':
-    resolution: {integrity: sha512-Ga8xFHxO2yt5TpGwV5xYx4LC3eUDmhT6jYfTbMFb6F7hBA9sLdHxNfYZCe2WEfVZ4/BM7I8989Qzq6BWilV2LA==}
+  '@react-router/node@7.2.0':
+    resolution: {integrity: sha512-CqBHLwvvV4BB8htmaSwT+SOwX9B4RVOIiEdTlaIp12sNVCGSYDIEGbv3T4Wxeq8p5ynNfhNcdBeXtZ6ZPWVozA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      react-router: 7.1.5
+      react-router: 7.2.0
       typescript: ^5.1.0
     peerDependenciesMeta:
       typescript:
@@ -3107,8 +3107,8 @@ packages:
       wrangler:
         optional: true
 
-  react-router@7.1.5:
-    resolution: {integrity: sha512-8BUF+hZEU4/z/JD201yK6S+UYhsf58bzYIDq2NS1iGpwxSXDu7F+DeGSkIXMFBuHZB21FSiCzEcUb18cQNdRkA==}
+  react-router@7.2.0:
+    resolution: {integrity: sha512-fXyqzPgCPZbqhrk7k3hPcCpYIlQ2ugIXDboHUzhJISFVy2DEPsmHgN588MyGmkIOv3jDgNfUE3kJi83L28s/LQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -4860,7 +4860,7 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
-  '@react-router/dev@7.1.5(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3)':
+  '@react-router/dev@7.2.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3)':
     dependencies:
       '@babel/core': 7.26.7
       '@babel/generator': 7.26.5
@@ -4871,7 +4871,7 @@ snapshots:
       '@babel/traverse': 7.26.7
       '@babel/types': 7.26.7
       '@npmcli/package-json': 4.0.1
-      '@react-router/node': 7.1.5(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+      '@react-router/node': 7.2.0(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
       arg: 5.0.2
       babel-dead-code-elimination: 1.0.8
       chokidar: 4.0.3
@@ -4887,7 +4887,7 @@ snapshots:
       picomatch: 2.3.1
       prettier: 2.8.8
       react-refresh: 0.14.2
-      react-router: 7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       semver: 7.7.1
       set-cookie-parser: 2.7.1
       valibot: 0.41.0(typescript@5.7.3)
@@ -4912,17 +4912,17 @@ snapshots:
       - tsx
       - yaml
 
-  '@react-router/fs-routes@7.1.5(@react-router/dev@7.1.5(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3))(typescript@5.7.3)':
+  '@react-router/fs-routes@7.2.0(@react-router/dev@7.2.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3))(typescript@5.7.3)':
     dependencies:
-      '@react-router/dev': 7.1.5(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3)
+      '@react-router/dev': 7.2.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(jiti@2.4.2)(lightningcss@1.29.1)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsx@4.19.2)(typescript@5.7.3)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3)
       minimatch: 9.0.5
     optionalDependencies:
       typescript: 5.7.3
 
-  '@react-router/node@7.1.5(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)':
+  '@react-router/node@7.2.0(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)':
     dependencies:
       '@mjackson/node-fetch-server': 0.2.0
-      react-router: 7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       source-map-support: 0.5.21
       stream-slice: 0.1.2
       undici: 6.21.1
@@ -6557,7 +6557,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.8
 
-  react-router-devtools@1.1.5(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2)):
+  react-router-devtools@1.1.5(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2)):
     dependencies:
       '@babel/core': 7.26.7
       '@babel/generator': 7.26.5
@@ -6577,7 +6577,7 @@ snapshots:
       react-diff-viewer-continued: 4.0.5(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-dom: 19.0.0(react@19.0.0)
       react-hotkeys-hook: 4.6.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react-router: 7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-tooltip: 5.28.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       vite: 6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2)
     optionalDependencies:
@@ -6590,14 +6590,14 @@ snapshots:
       - '@types/react-dom'
       - supports-color
 
-  react-router-hono-server@2.8.2(miniflare@3.20250129.0)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3):
+  react-router-hono-server@2.8.2(miniflare@3.20250129.0)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(vite@6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2))(wrangler@3.107.3):
     dependencies:
       '@drizzle-team/brocli': 0.11.0
       '@hono/node-server': 1.13.8(hono@4.6.20)
       '@hono/node-ws': 1.0.7(@hono/node-server@1.13.8(hono@4.6.20))(hono@4.6.20)
       '@hono/vite-dev-server': 0.17.0(hono@4.6.20)(miniflare@3.20250129.0)(wrangler@3.107.3)
       hono: 4.6.20
-      react-router: 7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       vite: 6.0.11(@types/node@22.13.1)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2)
     optionalDependencies:
       miniflare: 3.20250129.0
@@ -6606,7 +6606,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@types/cookie': 0.6.0
       cookie: 1.0.2
@@ -6651,22 +6651,22 @@ snapshots:
 
   regenerator-runtime@0.14.1: {}
 
-  remix-hono@0.0.18(hono@4.6.20)(i18next@24.2.2(typescript@5.7.3))(pretty-cache-header@1.0.0)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(remix-i18next@7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0))(zod@3.24.1):
+  remix-hono@0.0.18(hono@4.6.20)(i18next@24.2.2(typescript@5.7.3))(pretty-cache-header@1.0.0)(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(remix-i18next@7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0))(zod@3.24.1):
     dependencies:
       hono: 4.6.20
       pretty-cache-header: 1.0.0
     optionalDependencies:
       i18next: 24.2.2(typescript@5.7.3)
-      react-router: 7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      remix-i18next: 7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+      react-router: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      remix-i18next: 7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
       zod: 3.24.1
 
-  remix-i18next@7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0):
+  remix-i18next@7.0.2(i18next@24.2.2(typescript@5.7.3))(react-i18next@15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-router@7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0):
     dependencies:
       i18next: 24.2.2(typescript@5.7.3)
       react: 19.0.0
       react-i18next: 15.4.0(i18next@24.2.2(typescript@5.7.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react-router: 7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   require-directory@2.1.1: {}
 

@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next"
-import { useNavigate } from "react-router"
+import { href, useNavigate } from "react-router"
 import { Icon } from "~/library/icon/Icon"
 import { Link } from "~/library/link"
 
 export default function Route404() {
 	const navigate = useNavigate()
 	const { t } = useTranslation()
-
+	const to = href("/")
 	return (
 		<div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-blue-950 dark:to-blue-900 dark:text-white flex items-center justify-center p-4">
 			<div className="max-w-2xl w-full text-center">
@@ -27,7 +27,7 @@ export default function Route404() {
 						{t("navigation.back")}
 					</button>
 					<Link
-						to="/"
+						to={to}
 						className="inline-flex cursor-pointer items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300"
 					>
 						{t("navigation.home")}
