@@ -11,7 +11,7 @@ const i18next = new RemixI18Next({
 	// when translating messages server-side only
 	i18next: {
 		...i18n,
-		resources
+		resources,
 	},
 })
 
