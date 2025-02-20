@@ -41,7 +41,7 @@
 		"react-dom": "19.0.0",
 		"react-i18next": "15.4.0",
 		"react-router": "7.2.0",
-		"react-router-hono-server": "2.8.2",
+		"react-router-hono-server": "https://pkg.pr.new/rphlmr/react-router-hono-server@85",
 		"remix-hono": "0.0.18",
 		"remix-i18next": "7.0.2",
 		"tailwind-merge": "3.0.1",
