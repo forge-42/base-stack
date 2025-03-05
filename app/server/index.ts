@@ -8,5 +8,6 @@ export default await createHonoServer({
 		server.use("*", i18next(i18nextOpts))
 	},
 	defaultLogger: false,
+	// @ts-expect-error
 	getLoadContext,
 })
