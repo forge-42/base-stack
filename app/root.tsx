@@ -4,11 +4,12 @@ import type { LinksFunction } from "react-router"
 import { useChangeLanguage } from "remix-i18next/react"
 import type { Route } from "./+types/root"
 import { LanguageSwitcher } from "./library/language-switcher"
+import { globalAppContext } from "./server/context"
 import { ClientHintCheck, getHints } from "./services/client-hints"
 import tailwindcss from "./tailwind.css?url"
 
 export async function loader({ context, request }: Route.LoaderArgs) {
-	const { lang, clientEnv } = context
+	const { lang, clientEnv } = context.get(globalAppContext)
 	const hints = getHints(request)
 	return { lang, clientEnv, hints }
 }
@@ -69,3 +70,26 @@ export const ErrorBoundary = () => {
 		</div>
 	)
 }
+
+const clientLogger: Route.unstable_ClientMiddlewareFunction = async ({ request }, next) => {
+	const start = performance.now()
+
+	// Run the remaining middlewares and all route loaders
+	await next()
+
+	const duration = performance.now() - start
+	// biome-ignore lint/suspicious/noConsole: <explanation>
+	console.log(`Navigated to ${request.url} (${duration}ms)`)
+}
+
+const serverLogger: Route.unstable_MiddlewareFunction = async (_, next) => {
+	// biome-ignore lint/suspicious/noConsole: <explanation>
+	console.log("Going into the server middleware")
+	await next()
+	// biome-ignore lint/suspicious/noConsole: <explanation>
+	console.log("Going out of the server middleware")
+}
+
+export const unstable_middleware = [serverLogger]
+
+export const unstable_clientMiddleware = [clientLogger]

@@ -4,10 +4,11 @@ import { createInstance } from "i18next"
 import { isbot } from "isbot"
 import { renderToPipeableStream } from "react-dom/server"
 import { I18nextProvider, initReactI18next } from "react-i18next"
-import { type AppLoadContext, type EntryContext, ServerRouter } from "react-router"
+import { type EntryContext, ServerRouter, type unstable_RouterContextProvider } from "react-router"
 import i18n from "./localization/i18n" // your i18n configuration file
 import i18nextOpts from "./localization/i18n.server"
 import { resources } from "./localization/resource"
+import { globalAppContext } from "./server/context"
 
 // Reject all pending promises from handler functions after 10 seconds
 export const streamTimeout = 10000
@@ -17,11 +18,12 @@ export default async function handleRequest(
 	responseStatusCode: number,
 	responseHeaders: Headers,
 	context: EntryContext,
-	appContext: AppLoadContext
+	appContext: unstable_RouterContextProvider
 ) {
+	const ctx = appContext.get(globalAppContext)
 	const callbackName = isbot(request.headers.get("user-agent")) ? "onAllReady" : "onShellReady"
 	const instance = createInstance()
-	const lng = appContext.lang
+	const lng = ctx.lang
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const ns = i18nextOpts.getRouteNamespaces(context as any)
 
@@ -48,8 +50,8 @@ export default async function handleRequest(
 					responseHeaders.set("Content-Type", "text/html")
 
 					resolve(
-						// @ts-expect-error - We purposely do not define the body as existent so it's not used inside loaders as it's injected there as well
-						appContext.body(stream, {
+						// @ts-expect-error
+						ctx.body(stream, {
 							headers: responseHeaders,
 							status: didError ? 500 : responseStatusCode,
 						})

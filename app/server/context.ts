@@ -1,16 +1,17 @@
 import type { Context } from "hono"
+import { unstable_createContext } from "react-router"
 import { i18next } from "remix-hono/i18next"
 import { getClientEnv, initEnv } from "~/env.server"
 
 // Setup the .env vars
 const env = initEnv()
+const globalAppContext = unstable_createContext<GlobalAppContext>()
 
-export const getLoadContext = async (c: Context) => {
+const generateContext = async (c: Context) => {
 	// get the locale from the context
 	const locale = i18next.getLocale(c)
 	// get t function for the default namespace
 	const t = await i18next.getFixedT(c)
-
 	const clientEnv = getClientEnv()
 	return {
 		lang: locale,
@@ -22,11 +23,11 @@ export const getLoadContext = async (c: Context) => {
 	}
 }
 
-interface LoadContext extends Awaited<ReturnType<typeof getLoadContext>> {}
-
-/**
- * Declare our loaders and actions context type
- */
-declare module "react-router" {
-	interface AppLoadContext extends Omit<LoadContext, "body"> {}
+export const getLoadContext = async (c: Context) => {
+	const ctx = await generateContext(c)
+	return new Map([[globalAppContext, ctx]])
 }
+
+interface GlobalAppContext extends Awaited<ReturnType<typeof generateContext>> {}
+
+export { globalAppContext }
