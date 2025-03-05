@@ -5,8 +5,7 @@ import { globalAppContext } from "~/server/context"
 import type { Route } from "./+types/resource.locales"
 
 export async function loader({ request, context }: Route.LoaderArgs) {
-	const ctx = context.get(globalAppContext)
-	const { env } =  ctx
+	const { env } = context.get(globalAppContext)
 
 	const url = new URL(request.url)
 
