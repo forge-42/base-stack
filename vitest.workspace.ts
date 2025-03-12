@@ -26,9 +26,11 @@ export default defineWorkspace([
 			include: ["./**.test.{ts,tsx}", "./**.browser.test.{ts,tsx}", "!./**.server.test.{ts,tsx}"],
 			setupFiles: ["./tests/setup.browser.tsx"],
 			name: "browser tests",
+
 			browser: {
 				enabled: true,
 				instances: [{ browser: "chromium" }],
+
 				provider: "playwright",
 				// https://playwright.dev
 				//providerOptions: {},
