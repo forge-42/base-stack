@@ -1,10 +1,12 @@
 import { cacheHeader } from "pretty-cache-header"
 import { z } from "zod"
 import { resources } from "~/localization/resource"
+import { globalAppContext } from "~/server/context"
 import type { Route } from "./+types/resource.locales"
 
 export async function loader({ request, context }: Route.LoaderArgs) {
-	const { env } = context
+	const { env } = context.get(globalAppContext)
+
 	const url = new URL(request.url)
 
 	const lng = z
