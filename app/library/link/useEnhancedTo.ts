@@ -1,7 +1,6 @@
 import { type To, useSearchParams } from "react-router"
 import type { Language } from "~/localization/resource"
 
-
 /**
  * Enhances the default to prop by adding the language to the search params and conditionally keeping the search params
  * @param language The language to use over the search param language
@@ -40,5 +39,10 @@ export const useEnhancedTo = ({
 	const searchString = newSearchParams.toString()
 	const hasSearchParams = searchString.length > 0
 	const appendSearchParams = lang || hasSearchParams
-	return to + (appendSearchParams ? `?${keepSearchParams && hasSearchParams ? `${searchString}${lang ? "&" : ""}` : ""}${lang ? `lng=${lang}` : ""}` : "")
+	return (
+		to +
+		(appendSearchParams
+			? `?${keepSearchParams && hasSearchParams ? `${searchString}${lang ? "&" : ""}` : ""}${lang ? `lng=${lang}` : ""}`
+			: "")
+	)
 }
