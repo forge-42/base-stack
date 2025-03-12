@@ -70,26 +70,3 @@ export const ErrorBoundary = () => {
 		</div>
 	)
 }
-
-const clientLogger: Route.unstable_ClientMiddlewareFunction = async ({ request }, next) => {
-	const start = performance.now()
-
-	// Run the remaining middlewares and all route loaders
-	await next()
-
-	const duration = performance.now() - start
-	// biome-ignore lint/suspicious/noConsole: <explanation>
-	console.log(`Navigated to ${request.url} (${duration}ms)`)
-}
-
-const serverLogger: Route.unstable_MiddlewareFunction = async (_, next) => {
-	// biome-ignore lint/suspicious/noConsole: <explanation>
-	console.log("Going into the server middleware")
-	await next()
-	// biome-ignore lint/suspicious/noConsole: <explanation>
-	console.log("Going out of the server middleware")
-}
-
-export const unstable_middleware = [serverLogger]
-
-export const unstable_clientMiddleware = [clientLogger]
