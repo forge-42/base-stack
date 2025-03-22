@@ -46,4 +46,26 @@ describe("Home route", () => {
 			})
 		).not.toBeNull()
 	})
+
+	it("should render the home page text properly in portuguese", async ({ renderStub }) => {
+		const { getByText } = await renderStub({
+			entries: [
+				{
+					id: "home",
+					path: "/",
+
+					Component: () => Module.default(routeComponentProps),
+				},
+			],
+			i18n: {
+				lng: "pt",
+			},
+		})
+
+		expect(
+			getByText("React Router je zakon!", {
+				exact: false,
+			})
+		).not.toBeNull()
+	})
 })

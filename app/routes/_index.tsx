@@ -1,65 +1,223 @@
+import {
+	Dropdown,
+	DropdownButton,
+	DropdownDivider,
+	DropdownItem,
+	DropdownLabel,
+	DropdownMenu,
+} from "@/library/components/dropdown"
+import { Navbar, NavbarItem, NavbarSection, NavbarSpacer } from "@/library/components/navbar"
+import {
+	Sidebar,
+	SidebarBody,
+	SidebarFooter,
+	SidebarHeader,
+	SidebarHeading,
+	SidebarItem,
+	SidebarLabel,
+	SidebarSection,
+	SidebarSpacer,
+} from "@/library/components/sidebar"
+import { SidebarLayout } from "@/library/components/sidebar-layout"
+import {
+	ArrowRightStartOnRectangleIcon,
+	ChevronDownIcon,
+	ChevronUpIcon,
+	Cog8ToothIcon,
+	LightBulbIcon,
+	PlusIcon,
+	ShieldCheckIcon,
+	UserIcon,
+} from "@heroicons/react/16/solid"
+import {
+	Cog6ToothIcon,
+	HomeIcon,
+	InboxIcon,
+	MagnifyingGlassIcon,
+	MegaphoneIcon,
+	QuestionMarkCircleIcon,
+	SparklesIcon,
+	Square2StackIcon,
+	TicketIcon,
+} from "@heroicons/react/20/solid"
 import { useTranslation } from "react-i18next"
-import type { MetaFunction } from "react-router"
-import { convertDateToUserTz } from "~/utils/dates"
-import type { Route } from "./+types/_index"
+import { Avatar } from "~/library/components/avatar"
 
-export const meta: MetaFunction = () => {
-	return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }]
-}
-
-export const loader = ({ request }: Route.LoaderArgs) => {
-	const timezoneDate = convertDateToUserTz(new Date(), request)
-	return {
-		timezoneDate: timezoneDate.toTimeString(),
-	}
-}
-
-export default function Index({ loaderData }: Route.ComponentProps) {
-	const { timezoneDate } = loaderData
+export default function Home() {
 	const { t } = useTranslation()
 
 	return (
-		<div className="placeholder-index relative h-full min-h-screen w-screen dark:bg-gradient-to-b bg-white  dark:from-blue-950 dark:to-blue-900 dark:text-white sm:pb-16 sm:pt-8">
-			<div className="relative mx-auto max-w-[90rem] sm:px-6 lg:px-8">
-				<div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-					<section className="absolute inset-0">
-						<img className="h-full w-full object-cover" src="/banner.png" alt="Cover" />
-						<div className="absolute inset-0 bg-slate-950/60 mix-blend-multiply" />
-					</section>
-					<section className="lg:pb-18 relative px-4 pb-8 pt-16 sm:px-6 sm:pb-14 sm:pt-24 lg:px-8 lg:pt-32">
-						<h1 className="select-none overflow-hidden text-center text-7xl font-medium sm:text-6xl lg:text-8xl">
-							<span className="block pb-2 pr-2 text-center font-space uppercase text-white drop-shadow-md">
-								<img className="rounded-full size-80 m-auto" src="/logo.png" alt="Forge42 Logo" />
-								<span className="block h-full bg-gradient-to-tr from-[#48DDF3] to-[#FB4BB5] bg-clip-text pb-1 pr-1 text-center text-transparent dark:from-indigo-500 dark:to-sky-300 sm:inline sm:pb-0">
-									Base&nbsp;
+		<SidebarLayout
+			navbar={
+				<Navbar>
+					<NavbarSpacer />
+					<NavbarSection>
+						<NavbarItem href="/search" aria-label={t("menu.header.search")}>
+							<MagnifyingGlassIcon />
+						</NavbarItem>
+						<NavbarItem href="/inbox" aria-label={t("menu.header.inbox")}>
+							<InboxIcon />
+						</NavbarItem>
+						<Dropdown>
+							<DropdownButton as={NavbarItem}>
+								<Avatar src="/users/erica.jpg" square />
+							</DropdownButton>
+							<DropdownMenu className="min-w-64" anchor="bottom end">
+								<DropdownItem href="/my-profile">
+									<UserIcon />
+									<DropdownLabel>{t("menu.dropdown.myProfile")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownItem href="/settings">
+									<Cog8ToothIcon />
+									<DropdownLabel>{t("menu.dropdown.settings")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownDivider />
+								<DropdownItem href="/privacy-policy">
+									<ShieldCheckIcon />
+									<DropdownLabel>{t("menu.dropdown.privacyPolicy")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownItem href="/share-feedback">
+									<LightBulbIcon />
+									<DropdownLabel>{t("menu.dropdown.shareFeedback")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownDivider />
+								<DropdownItem href="/logout">
+									<ArrowRightStartOnRectangleIcon />
+									<DropdownLabel>{t("menu.dropdown.signOut")}</DropdownLabel>
+								</DropdownItem>
+							</DropdownMenu>
+						</Dropdown>
+					</NavbarSection>
+				</Navbar>
+			}
+			sidebar={
+				<Sidebar>
+					<SidebarHeader>
+						<Dropdown>
+							<DropdownButton as={SidebarItem} className="lg:mb-2.5">
+								<Avatar src="users/erica.jpg" />
+								<SidebarLabel>{t("menu.header.tailwindLabs")}</SidebarLabel>
+								<ChevronDownIcon />
+							</DropdownButton>
+							<DropdownMenu className="min-w-80 lg:min-w-64" anchor="bottom start">
+								<DropdownItem href="/teams/1/settings">
+									<Cog8ToothIcon />
+									<DropdownLabel>{t("menu.dropdown.settings")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownDivider />
+								<DropdownItem href="/teams/1">
+									<Avatar slot="icon" src="users/erica.jpg" />
+									<DropdownLabel>{t("menu.header.tailwindLabs")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownItem href="/teams/2">
+									<Avatar slot="icon" initials="WC" className="bg-purple-500 text-white" />
+									<DropdownLabel>Workcation</DropdownLabel>
+								</DropdownItem>
+								<DropdownDivider />
+								<DropdownItem href="/teams/create">
+									<PlusIcon />
+									<DropdownLabel>{t("menu.dropdown.newTeam")}</DropdownLabel>
+								</DropdownItem>
+							</DropdownMenu>
+						</Dropdown>
+						<SidebarSection className="max-lg:hidden">
+							<SidebarItem href="/search">
+								<MagnifyingGlassIcon />
+								<SidebarLabel>{t("menu.header.search")}</SidebarLabel>
+							</SidebarItem>
+							<SidebarItem href="/inbox">
+								<InboxIcon />
+								<SidebarLabel>{t("menu.header.inbox")}</SidebarLabel>
+							</SidebarItem>
+						</SidebarSection>
+					</SidebarHeader>
+					<SidebarBody>
+						<SidebarSection>
+							<SidebarItem href="/">
+								<HomeIcon />
+								<SidebarLabel>{t("menu.sidebar.home")}</SidebarLabel>
+							</SidebarItem>
+							<SidebarItem href="/events">
+								<Square2StackIcon />
+								<SidebarLabel>{t("menu.sidebar.events")}</SidebarLabel>
+							</SidebarItem>
+							<SidebarItem href="/orders">
+								<TicketIcon />
+								<SidebarLabel>{t("menu.sidebar.orders")}</SidebarLabel>
+							</SidebarItem>
+							<SidebarItem href="/settings">
+								<Cog6ToothIcon />
+								<SidebarLabel>{t("menu.sidebar.settings")}</SidebarLabel>
+							</SidebarItem>
+							<SidebarItem href="/broadcasts">
+								<MegaphoneIcon />
+								<SidebarLabel>{t("menu.sidebar.broadcasts")}</SidebarLabel>
+							</SidebarItem>
+						</SidebarSection>
+						<SidebarSection className="max-lg:hidden">
+							<SidebarHeading>{t("menu.sidebar.upcomingEvents")}</SidebarHeading>
+							<SidebarItem href="/events/1">{t("menu.sidebar.bearHug")}</SidebarItem>
+							<SidebarItem href="/events/2">{t("menu.sidebar.vikingPeople")}</SidebarItem>
+							<SidebarItem href="/events/3">{t("menu.sidebar.sixFingers")}</SidebarItem>
+						</SidebarSection>
+						<SidebarSpacer />
+						<SidebarSection>
+							<SidebarItem href="/support">
+								<QuestionMarkCircleIcon />
+								<SidebarLabel>{t("menu.sidebar.support")}</SidebarLabel>
+							</SidebarItem>
+							<SidebarItem href="/changelog">
+								<SparklesIcon />
+								<SidebarLabel>{t("menu.sidebar.changelog")}</SidebarLabel>
+							</SidebarItem>
+						</SidebarSection>
+					</SidebarBody>
+					<SidebarFooter className="max-lg:hidden">
+						<Dropdown>
+							<DropdownButton as={SidebarItem}>
+								<span className="flex min-w-0 items-center gap-3">
+									<Avatar src="/users/erica.jpg" className="size-10" square alt="" />
+									<span className="min-w-0">
+										<span className="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white">
+											{t("menu.user.name")}
+										</span>
+										<span className="block truncate text-xs/5 font-normal text-zinc-500 dark:text-zinc-400">
+											{t("menu.user.email")}
+										</span>
+									</span>
 								</span>
-								<span className="text-center">Stack</span>
-							</span>
-						</h1>
-						<p className="mx-auto mt-8 max-w-lg text-center text-lg text-white sm:max-w-3xl md:mt-12">
-							Welcome to Forge 42 base stack. The minimal stack required to get you up and running. This stack was
-							chosen to provide a solid foundation for your project, without the bloat. Check the{" "}
-							<a
-								href="https://github.com/forge42dev/base-stack"
-								target={"_blank"}
-								className="text-white no-underline font-bold hover:cursor-pointer focus:text-white"
-								rel="noreferrer"
-							>
-								README.md
-							</a>{" "}
-							file for detailed instructions.
-						</p>
-						<div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-							<div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0" />
-						</div>
-					</section>
-				</div>
-			</div>
-
-			<div className="w-full text-center text-2xl mt-4">{t("hi")}</div>
-			<section className="absolute bottom-1 mb-2 w-full pb-1 pt-2 text-center sm:bottom-2 sm:pb-3 md:mb-0 md:mt-0">
-				Crafted with ❤️ / Time without timezone mismatch {timezoneDate}
-			</section>
-		</div>
+								<ChevronUpIcon />
+							</DropdownButton>
+							<DropdownMenu className="min-w-64" anchor="top start">
+								<DropdownItem href="/my-profile">
+									<UserIcon />
+									<DropdownLabel>{t("menu.dropdown.myProfile")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownItem href="/settings">
+									<Cog8ToothIcon />
+									<DropdownLabel>{t("menu.dropdown.settings")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownDivider />
+								<DropdownItem href="/privacy-policy">
+									<ShieldCheckIcon />
+									<DropdownLabel>{t("menu.dropdown.privacyPolicy")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownItem href="/share-feedback">
+									<LightBulbIcon />
+									<DropdownLabel>{t("menu.dropdown.shareFeedback")}</DropdownLabel>
+								</DropdownItem>
+								<DropdownDivider />
+								<DropdownItem href="/logout">
+									<ArrowRightStartOnRectangleIcon />
+									<DropdownLabel>{t("menu.dropdown.signOut")}</DropdownLabel>
+								</DropdownItem>
+							</DropdownMenu>
+						</Dropdown>
+					</SidebarFooter>
+				</Sidebar>
+			}
+		>
+			{/* The page content */}
+		</SidebarLayout>
 	)
 }
