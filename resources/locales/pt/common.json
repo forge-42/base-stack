@@ -1,0 +1,58 @@
+{
+	"hi": "React Router é incrível!",
+	"navigation": {
+		"back": "Voltar",
+		"home": "Voltar para a página inicial"
+	},
+	"menu": {
+		"header": {
+			"tailwindLabs": "Tailwind Labs",
+			"search": "Buscar",
+			"inbox": "Caixa de entrada"
+		},
+		"dropdown": {
+			"myProfile": "Meu perfil",
+			"settings": "Configurações",
+			"privacyPolicy": "Política de privacidade",
+			"shareFeedback": "Compartilhar feedback",
+			"signOut": "Sair",
+			"newTeam": "Novo time..."
+		},
+		"sidebar": {
+			"home": "Início",
+			"events": "Eventos",
+			"orders": "Pedidos",
+			"settings": "Configurações",
+			"broadcasts": "Transmissões",
+			"support": "Suporte",
+			"changelog": "Histórico de mudanças",
+			"upcomingEvents": "Próximos Eventos",
+			"bearHug": "Bear Hug: Ao Vivo em Concerto",
+			"vikingPeople": "Povo Viking",
+			"sixFingers": "Six Fingers — Set de DJ"
+		},
+		"user": {
+			"name": "Erica",
+			"email": "erica@example.com"
+		}
+	},
+	"error": {
+		"500": {
+			"title": "Algo deu errado!",
+			"description": "Parece que algo inesperado aconteceu no servidor."
+		},
+		"404": {
+			"title": "Página não encontrada!",
+			"description": "Opa! A página que você está procurando parece ter desaparecido."
+		},
+		"403": {
+			"title": "Não autorizado!",
+			"description": "Parece que você não tem acesso a esta página."
+		},
+		"200": {
+			"title": "Algo deu errado!",
+			"description": "Parece que algo inesperado aconteceu no servidor."
+		}
+	},
+	"msg": "Bem-vindo ao stack base do Forge 42. O stack mínimo necessário para você começar e rodar. Este stack foi escolhido para fornecer uma base sólida para o seu projeto, sem o excesso. Verifique o arquivo README.md para instruções detalhadas."
+}

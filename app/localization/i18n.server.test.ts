@@ -14,8 +14,8 @@ describe("Remix I18n", () => {
 	})
 
 	it("returns the correct language when specified in the search params from the request", async () => {
-		const request = new Request("http://localhost:3000?lng=bs")
+		const request = new Request("http://localhost:3000?lng=pt")
 		const defaultLanguage = await remixI18n.getLocale(request)
-		expect(defaultLanguage).toBe("bs")
+		expect(defaultLanguage).toBe("pt")
 	})
 })

@@ -4,6 +4,38 @@
 		"back": "Go back",
 		"home": "Back to home"
 	},
+	"menu": {
+		"header": {
+			"tailwindLabs": "Tailwind Labs",
+			"search": "Search",
+			"inbox": "Inbox"
+		},
+		"dropdown": {
+			"myProfile": "My profile",
+			"settings": "Settings",
+			"privacyPolicy": "Privacy policy",
+			"shareFeedback": "Share feedback",
+			"signOut": "Sign out",
+			"newTeam": "New team..."
+		},
+		"sidebar": {
+			"home": "Home",
+			"events": "Events",
+			"orders": "Orders",
+			"settings": "Settings",
+			"broadcasts": "Broadcasts",
+			"support": "Support",
+			"changelog": "Changelog",
+			"upcomingEvents": "Upcoming Events",
+			"bearHug": "Bear Hug: Live in Concert",
+			"vikingPeople": "Viking People",
+			"sixFingers": "Six Fingers — DJ Set"
+		},
+		"user": {
+			"name": "Erica",
+			"email": "erica@example.com"
+		}
+	},
 	"error": {
 		"500": {
 			"title": "Something went wrong!",
@@ -21,5 +53,6 @@
 			"title": "Something went wrong!",
 			"description": "Looks like something unexpected happened on the server."
 		}
-	}
+	},
+	"msg": "Welcome to Forge 42 base stack. The minimal stack required to get you up and running. This stack was chosen to provide a solid foundation for your project, without the bloat. Check the README.md file for detailed instructions."
 }
