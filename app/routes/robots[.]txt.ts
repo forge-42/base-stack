@@ -4,8 +4,7 @@ import { createDomain } from "~/utils/http"
 import type { Route } from "./+types/robots[.]txt"
 
 export async function loader({ request, context }: Route.LoaderArgs) {
-	const { env } = context
-	const isProductionDeployment = env.APP_DEPLOYMENT_ENV === "production"
+	const { isProductionDeployment } = context
 	const domain = createDomain(request)
 	const robotsTxt = generateRobotsTxt([
 		{
