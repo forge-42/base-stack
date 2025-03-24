@@ -6,7 +6,7 @@ import { Outlet, type RoutesTestStubProps, createRoutesStub } from "react-router
 import { render } from "vitest-browser-react"
 import i18n from "~/localization/i18n"
 import { type Language, type Namespace, resources } from "~/localization/resource"
-type StubRouteEntry = Parameters<typeof createRoutesStub>[0][0]
+export type StubRouteEntry = Parameters<typeof createRoutesStub>[0][0]
 
 const renderStub = async (args?: {
 	props?: RoutesTestStubProps

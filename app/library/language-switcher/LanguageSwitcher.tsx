@@ -6,7 +6,6 @@ import { Link } from "../link"
 const LanguageSwitcher = () => {
 	const { i18n } = useTranslation()
 	const location = useLocation()
-	const to = location.pathname
 
 	return (
 		<div className="flex gap-2 p-2 fixed top-0 right-0 w-min z-10">
@@ -14,7 +13,11 @@ const LanguageSwitcher = () => {
 				<Link
 					className="text-blue-500 dark:text-white hover:underline transition-all"
 					key={language}
-					to={`${to}?lng=${language}`}
+					to={`${location.pathname}`}
+					// We override the default appending of the language to the search params via our language
+					language={language}
+					// We keep the search params if any on language change
+					keepSearchParams
 					onClick={() => i18n.changeLanguage(language)}
 				>
 					{language}
