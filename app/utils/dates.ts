@@ -1,6 +1,6 @@
 import { getTimeZone } from "../services/client-hints"
 
-export function convertTz(date: string | Date, tzString: string) {
+function convertTz(date: string | Date, tzString: string) {
 	const dateToConvert = typeof date === "string" ? new Date(date) : date
 	// Convert to the target timezone
 	const convertedDate = new Date(dateToConvert.toLocaleString("en-US", { timeZone: tzString }))
