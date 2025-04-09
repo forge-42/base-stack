@@ -1,3 +1,4 @@
+import { useMemo } from "react"
 import { type To, useSearchParams } from "react-router"
 import type { Language } from "~/localization/resource"
 
@@ -39,10 +40,13 @@ export const useEnhancedTo = ({
 	const searchString = newSearchParams.toString()
 	const hasSearchParams = searchString.length > 0
 	const appendSearchParams = lang || hasSearchParams
-	return (
-		to +
-		(appendSearchParams
-			? `?${keepSearchParams && hasSearchParams ? `${searchString}${lang ? "&" : ""}` : ""}${lang ? `lng=${lang}` : ""}`
-			: "")
+	const newPath = useMemo(
+		() =>
+			to +
+			(appendSearchParams
+				? `?${keepSearchParams && hasSearchParams ? `${searchString}${lang ? "&" : ""}` : ""}${lang ? `lng=${lang}` : ""}`
+				: ""),
+		[to, appendSearchParams, keepSearchParams, hasSearchParams, searchString, lang]
 	)
+	return newPath
 }
