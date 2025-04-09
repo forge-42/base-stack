@@ -12,7 +12,7 @@ let env: ServerEnv
  * Initializes and parses given environment variables using zod
  * @returns Initialized env vars
  */
-export function initEnv() {
+function initEnv() {
 	// biome-ignore lint/nursery/noProcessEnv: This should be the only place to use process.env directly
 	const envData = envSchema.safeParse(process.env)
 
