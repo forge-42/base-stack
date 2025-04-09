@@ -55,12 +55,12 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 export const ErrorBoundary = () => {
 	const error = useRouteError()
 	const { t } = useTranslation()
-
+	// Constrain the generic type so we don't provide a non-existent key
 	const statusCode = () => {
 		if (!isRouteErrorResponse(error)) {
 			return "500"
 		}
-
+		// Supported error code messages
 		switch (error.status) {
 			case 200:
 				return "200"
