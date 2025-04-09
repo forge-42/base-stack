@@ -19,3 +19,12 @@ export const resources: Record<Language, Resource> = {
 		common: bosnian,
 	},
 }
+
+declare module "i18next" {
+	export interface CustomTypeOptions {
+		defaultNS: "common"
+		fallbackNS: "common"
+		// custom resources type
+		resources: Resource
+	}
+}

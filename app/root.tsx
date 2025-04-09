@@ -55,8 +55,24 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 export const ErrorBoundary = () => {
 	const error = useRouteError()
 	const { t } = useTranslation()
-
-	const errorStatusCode = isRouteErrorResponse(error) ? error.status : "500"
+	// Constrain the generic type so we don't provide a non-existent key
+	const statusCode = () => {
+		if (!isRouteErrorResponse(error)) {
+			return "500"
+		}
+		// Supported error code messages
+		switch (error.status) {
+			case 200:
+				return "200"
+			case 403:
+				return "403"
+			case 404:
+				return "404"
+			default:
+				return "500"
+		}
+	}
+	const errorStatusCode = statusCode()
 
 	return (
 		<div className="placeholder-index relative h-full min-h-screen w-screen flex items-center bg-gradient-to-b from-gray-50 to-gray-100 dark:from-blue-950 dark:to-blue-900 justify-center dark:bg-white sm:pb-16 sm:pt-8">
