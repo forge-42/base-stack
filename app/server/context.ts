@@ -1,6 +1,8 @@
 import type { Context } from "hono"
 import { i18next } from "remix-hono/i18next"
 import { getClientEnv, getServerEnv } from "~/env.server"
+import i18n from "~/localization/i18n"
+import type { Language } from "~/localization/resource"
 
 export const getLoadContext = async (c: Context) => {
 	// get the locale from the context
@@ -11,7 +13,7 @@ export const getLoadContext = async (c: Context) => {
 	const env = getServerEnv()
 
 	return {
-		lang: locale,
+		lang: i18n.supportedLngs.includes(locale as Language) ? locale : "en",
 		t,
 		isProductionDeployment: env.APP_ENV === "production",
 		env,

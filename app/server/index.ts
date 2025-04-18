@@ -5,7 +5,7 @@ import { getLoadContext } from "./context"
 
 export default await createHonoServer({
 	configure(server) {
-		server.use("*", i18next(i18nextOpts))
+		server.use("*", i18next(i18nextOpts()))
 	},
 	defaultLogger: false,
 	getLoadContext,

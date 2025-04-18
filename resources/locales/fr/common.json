@@ -1,0 +1,25 @@
+{
+	"hi": "React Router est cool!",
+	"navigation": {
+		"back": "Go back",
+		"home": "Back to home"
+	},
+	"error": {
+		"500": {
+			"title": "Something went wrong!",
+			"description": "Looks like something unexpected happened on the server."
+		},
+		"404": {
+			"title": "Page Not found!",
+			"description": "Oops! The page you're looking for seems to have vanished into thin air."
+		},
+		"403": {
+			"title": "Unauthorized!",
+			"description": "Looks like you can't access this page."
+		},
+		"200": {
+			"title": "Something went wrong!",
+			"description": "Looks like something unexpected happened on the server."
+		}
+	}
+}
