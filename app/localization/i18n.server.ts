@@ -1,11 +1,14 @@
 import { RemixI18Next } from "remix-i18next/server"
 import i18n from "~/localization/i18n" // your i18n configuration file
+import { localeCookie } from "./cookie.server"
 import { resources } from "./resource"
 
 const i18next = new RemixI18Next({
 	detection: {
 		supportedLanguages: i18n.supportedLngs,
 		fallbackLanguage: i18n.fallbackLng,
+		cookie: localeCookie,
+		order: ["searchParams", "cookie"]
 	},
 	// This is the configuration for i18next used
 	// when translating messages server-side only

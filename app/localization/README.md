@@ -13,6 +13,11 @@ Due to the fact that the server does not care about loading in additional resour
 pass in `resources` to the `i18next` instance. This provides all the languages to your server which allows it to render
 the correct language on the server.
 
+The server side also first checks the search param for the `lng` param and uses that as the language, otherwise it checks
+the cookie and if it has the users preferred language set. If the cookie is not set it defaults to the fallback language.
+
+This is useful if the user navigates to a page without the query param set, the server will still be able to render the page in the correct language.
+
 ## Client-side
 
 The client-side is a bit more complicated. We do not want to load in all the languages on the client side as it would
