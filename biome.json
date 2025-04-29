@@ -53,8 +53,7 @@
 					"level": "error",
 					"fix": "safe",
 					"options": {
-						"attributes": ["className"],
-						"functions": ["cn", "tw", "clsx", "twMerge"]
+						"functions": ["cn", "cva", "tw", "clsx", "twMerge"]
 					}
 				}
 			}
