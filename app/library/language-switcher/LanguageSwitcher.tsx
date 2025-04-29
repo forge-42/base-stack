@@ -8,10 +8,10 @@ const LanguageSwitcher = () => {
 	const location = useLocation()
 
 	return (
-		<div className="flex gap-2 p-2 fixed top-0 right-0 w-min z-10">
+		<div className="fixed top-0 right-0 z-10 flex w-min gap-2 p-2">
 			{supportedLanguages.map((language) => (
 				<Link
-					className="text-blue-500 dark:text-white hover:underline transition-all"
+					className="text-blue-500 transition-all hover:underline dark:text-white"
 					key={language}
 					to={`${location.pathname}`}
 					// We override the default appending of the language to the search params via our language
