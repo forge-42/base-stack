@@ -48,7 +48,14 @@
 			},
 			"nursery": {
 				"recommended": true,
-				"noProcessEnv": "error"
+				"noProcessEnv": "error",
+				"useSortedClasses": {
+					"level": "error",
+					"fix": "safe",
+					"options": {
+						"functions": ["cn", "cva", "tw", "clsx", "twMerge"]
+					}
+				}
 			}
 		}
 	},

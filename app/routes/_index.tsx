@@ -19,18 +19,18 @@ export default function Index({ loaderData }: Route.ComponentProps) {
 	const { t } = useTranslation()
 
 	return (
-		<div className="placeholder-index relative h-full min-h-screen w-screen dark:bg-gradient-to-b bg-white  dark:from-blue-950 dark:to-blue-900 dark:text-white sm:pb-16 sm:pt-8">
+		<div className="relative h-full min-h-screen w-screen bg-white placeholder-index sm:pt-8 sm:pb-16 dark:bg-gradient-to-b dark:from-blue-950 dark:to-blue-900 dark:text-white">
 			<div className="relative mx-auto max-w-[90rem] sm:px-6 lg:px-8">
 				<div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
 					<section className="absolute inset-0">
 						<img className="h-full w-full object-cover" src="/banner.png" alt="Cover" />
 						<div className="absolute inset-0 bg-slate-950/60 mix-blend-multiply" />
 					</section>
-					<section className="lg:pb-18 relative px-4 pb-8 pt-16 sm:px-6 sm:pb-14 sm:pt-24 lg:px-8 lg:pt-32">
-						<h1 className="select-none overflow-hidden text-center text-7xl font-medium sm:text-6xl lg:text-8xl">
-							<span className="block pb-2 pr-2 text-center font-space uppercase text-white drop-shadow-md">
-								<img className="rounded-full size-80 m-auto" src="/logo.png" alt="Forge42 Logo" />
-								<span className="block h-full bg-gradient-to-tr from-[#48DDF3] to-[#FB4BB5] bg-clip-text pb-1 pr-1 text-center text-transparent dark:from-indigo-500 dark:to-sky-300 sm:inline sm:pb-0">
+					<section className="relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32 lg:pb-18">
+						<h1 className="select-none overflow-hidden text-center font-medium text-7xl sm:text-6xl lg:text-8xl">
+							<span className="block pr-2 pb-2 text-center font-space text-white uppercase drop-shadow-md">
+								<img className="m-auto size-80 rounded-full" src="/logo.png" alt="Forge42 Logo" />
+								<span className="block h-full bg-gradient-to-tr from-[#48DDF3] to-[#FB4BB5] bg-clip-text pr-1 pb-1 text-center text-transparent sm:inline sm:pb-0 dark:from-indigo-500 dark:to-sky-300">
 									Base&nbsp;
 								</span>
 								<span className="text-center">Stack</span>
@@ -42,7 +42,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
 							<a
 								href="https://github.com/forge42dev/base-stack"
 								target={"_blank"}
-								className="text-white no-underline font-bold hover:cursor-pointer focus:text-white"
+								className="font-bold text-white no-underline hover:cursor-pointer focus:text-white"
 								rel="noreferrer"
 							>
 								README.md
@@ -56,8 +56,8 @@ export default function Index({ loaderData }: Route.ComponentProps) {
 				</div>
 			</div>
 
-			<div className="w-full text-center text-2xl mt-4">{t("hi")}</div>
-			<section className="absolute bottom-1 mb-2 w-full pb-1 pt-2 text-center sm:bottom-2 sm:pb-3 md:mb-0 md:mt-0">
+			<div className="mt-4 w-full text-center text-2xl">{t("hi")}</div>
+			<section className="absolute bottom-1 mb-2 w-full pt-2 pb-1 text-center sm:bottom-2 sm:pb-3 md:mt-0 md:mb-0">
 				Crafted with ❤️ / Time without timezone mismatch {timezoneDate}
 			</section>
 		</div>
