@@ -7,7 +7,7 @@ export default defineWorkspace([
 			name: "server tests",
 			environment: "node",
 			// Include generic .test files that should work anywhere and .server.test files for server only, ignore .browser.test
-			include: ["./**/*.server.test.{ts,tsx}", "!./**.browser.test.{ts,tsx}", "./**/*.test.{ts,tsx}"],
+			include: ["./**/*.server.test.{ts,tsx}", "!./**/*.browser.test.{ts,tsx}", "./**/*.test.{ts,tsx}"],
 		},
 	},
 	{
