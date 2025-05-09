@@ -1,16 +1,33 @@
 import { useTranslation } from "react-i18next"
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse, useRouteError } from "react-router"
+import {
+	Links,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
+	data,
+	isRouteErrorResponse,
+	useRouteError,
+} from "react-router"
 import type { LinksFunction } from "react-router"
 import { useChangeLanguage } from "remix-i18next/react"
 import type { Route } from "./+types/root"
 import { LanguageSwitcher } from "./library/language-switcher"
+import { localeCookie } from "./localization/cookie.server"
 import { ClientHintCheck, getHints } from "./services/client-hints"
 import tailwindcss from "./tailwind.css?url"
 
 export async function loader({ context, request }: Route.LoaderArgs) {
 	const { lang, clientEnv } = context
 	const hints = getHints(request)
-	return { lang, clientEnv, hints }
+	return data(
+		{ lang, clientEnv, hints },
+		{
+			headers: {
+				"Set-Cookie": await localeCookie.serialize(lang),
+			},
+		}
+	)
 }
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: tailwindcss }]
