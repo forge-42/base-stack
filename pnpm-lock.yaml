@@ -12,8 +12,8 @@ importers:
         specifier: 1.3.7
         version: 1.3.7
       '@forge42/seo-tools':
-        specifier: 1.4.2
-        version: 1.4.2(typescript@5.8.3)
+        specifier: 1.4.5
+        version: 1.4.5(typescript@5.8.3)
       '@react-router/node':
         specifier: 7.6.3
         version: 7.6.3(react-router@7.6.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)
@@ -639,8 +639,8 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@forge42/seo-tools@1.4.2':
-    resolution: {integrity: sha512-48DAs3FKtuzuHO3Q31yDXKU50z+Gpprxw8KA9gZ/03gAqTnZqtxDokQ2zdpG/NLCiWH5GY4tIcC6kz3PdfQ0VA==}
+  '@forge42/seo-tools@1.4.5':
+    resolution: {integrity: sha512-Z13hYTSgRIeAm0Y3noOTTxTREODKEK7LTLE7MbAYZFy15/oOoDsNtrrGGUhCUl0VFcULtWruO9V7qDIeaBoNlA==}
 
   '@hono/node-server@1.15.0':
     resolution: {integrity: sha512-MjmK4l5N4dQpZ9OSWN0tCj7ejuc7WvuWMzSKtc89bnknJykAeHxzRigXBTYZk85H6Awrii6RM59iUiUluApu2A==}
@@ -1279,11 +1279,6 @@ packages:
 
   '@rollup/rollup-linux-x64-gnu@4.44.2':
     resolution: {integrity: sha512-/bXb0bEsWMyEkIsUL2Yt5nFB5naLAwyOWMEviQfQY1x3l5WsLKgvZf66TM7UTfED6erckUVUJQ/jJ1FSpm3pRQ==}
-    cpu: [x64]
-    os: [linux]
-
-  '@rollup/rollup-linux-x64-musl@4.34.8':
-    resolution: {integrity: sha512-SCXcP0ZpGFIe7Ge+McxY5zKxiEI5ra+GT3QRxL0pMMtxPfpyLAKleZODi1zdRHkz5/BhueUrYtYVgubqe9JBNQ==}
     cpu: [x64]
     os: [linux]
 
@@ -3924,14 +3919,14 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@forge42/seo-tools@1.4.2(typescript@5.8.3)':
+  '@forge42/seo-tools@1.4.5(typescript@5.8.3)':
     dependencies:
       url-pattern: 1.0.3
     optionalDependencies:
       '@remix-run/server-runtime': 2.15.3(typescript@5.8.3)
       '@rollup/rollup-linux-arm64-gnu': 4.18.1
       '@rollup/rollup-linux-x64-gnu': 4.44.2
-      '@rollup/rollup-linux-x64-musl': 4.34.8
+      '@rollup/rollup-linux-x64-musl': 4.44.2
       '@rollup/rollup-win32-arm64-msvc': 4.18.1
       '@rollup/rollup-win32-x64-msvc': 4.18.1
     transitivePeerDependencies:
@@ -4530,9 +4525,6 @@ snapshots:
     optional: true
 
   '@rollup/rollup-linux-x64-gnu@4.44.2':
-    optional: true
-
-  '@rollup/rollup-linux-x64-musl@4.34.8':
     optional: true
 
   '@rollup/rollup-linux-x64-musl@4.44.2':

@@ -9,8 +9,7 @@ export const loader = async ({ request, params }: Route.LoaderArgs) => {
 
 	const sitemap = await generateRemixSitemap({
 		domain,
-		// biome-ignore lint/suspicious/noExplicitAny: The types in the library are wrong
-		routes: routes as any,
+		routes,
 		ignore: ["/resource/*"],
 		// Transforms the url before adding it to the sitemap
 		urlTransformer: (url) => `${url}?lng=${params.lang}`,
