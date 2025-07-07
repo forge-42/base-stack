@@ -1,25 +1,17 @@
 import { cacheHeader } from "pretty-cache-header"
-import { z } from "zod"
-import { resources } from "~/localization/resource"
+import { z } from "zod/v4"
+import { type Language, type Namespace, resources } from "~/localization/resource"
 import type { Route } from "./+types/resource.locales"
 
 export async function loader({ request, context }: Route.LoaderArgs) {
 	const { isProductionDeployment } = context
 	const url = new URL(request.url)
 
-	const lng = z
-		.string()
-		.refine((lng): lng is keyof typeof resources => Object.keys(resources).includes(lng))
-		.parse(url.searchParams.get("lng"))
+	const lng = z.enum(Object.keys(resources) as Language[]).parse(url.searchParams.get("lng"))
 
 	const namespaces = resources[lng]
 
-	const ns = z
-		.string()
-		.refine((ns): ns is keyof typeof namespaces => {
-			return Object.keys(resources[lng]).includes(ns)
-		})
-		.parse(url.searchParams.get("ns"))
+	const ns = z.enum(Object.keys(resources[lng]) as Namespace[]).parse(url.searchParams.get("ns"))
 
 	const headers = new Headers()
 

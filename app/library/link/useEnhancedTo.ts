@@ -31,11 +31,15 @@ export const useEnhancedTo = ({
 	language,
 	to,
 	keepSearchParams,
-}: { language?: Language; to: To; keepSearchParams?: boolean }) => {
+}: {
+	language?: Language
+	to: To
+	keepSearchParams?: boolean
+}) => {
 	const [params] = useSearchParams()
 	const { lng, ...searchParams } = Object.fromEntries(params.entries())
 	// allow language override for language switcher or manually setting the language in specific cases
-	const lang = language ?? params.get("lng")
+	const lang = language ?? lng
 	const newSearchParams = new URLSearchParams(searchParams)
 	const searchString = newSearchParams.toString()
 	const hasSearchParams = searchString.length > 0

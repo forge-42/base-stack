@@ -22,8 +22,7 @@ export default async function handleRequest(
 	const callbackName = isbot(request.headers.get("user-agent")) ? "onAllReady" : "onShellReady"
 	const instance = createInstance()
 	const lng = appContext.lang
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	const ns = i18nextOpts.getRouteNamespaces(context as any)
+	const ns = i18nextOpts.getRouteNamespaces(context)
 
 	await instance
 		.use(initReactI18next) // Tell our instance to use react-i18next

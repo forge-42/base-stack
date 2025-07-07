@@ -3,6 +3,7 @@ import { userEvent } from "@vitest/browser/context"
 import { useLocation } from "react-router"
 import type { StubRouteEntry } from "tests/setup.browser"
 import { Link, type LinkProps } from "./link"
+
 const getEntries: (linkProps?: LinkProps) => StubRouteEntry[] = (linkProps) => [
 	{
 		path: "/first",
