@@ -5,7 +5,7 @@ const languages = ["en", "bs"] as const
 export const supportedLanguages = [...languages]
 export type Language = (typeof languages)[number]
 
-type Resource = {
+export type Resource = {
 	common: typeof english
 }
 
