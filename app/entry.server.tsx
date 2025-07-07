@@ -4,7 +4,7 @@ import { createInstance } from "i18next"
 import { isbot } from "isbot"
 import { renderToPipeableStream } from "react-dom/server"
 import { I18nextProvider, initReactI18next } from "react-i18next"
-import { type AppLoadContext, type EntryContext, ServerRouter } from "react-router"
+import { type AppLoadContext, type EntryContext, type HandleDataRequestFunction, ServerRouter } from "react-router"
 import i18n from "./localization/i18n" // your i18n configuration file
 import i18nextOpts from "./localization/i18n.server"
 import { resources } from "./localization/resource"
@@ -70,4 +70,28 @@ export default async function handleRequest(
 		// boundaries to be flushed
 		setTimeout(abort, streamTimeout + 1000)
 	})
+}
+
+/**
+ * This adds a cache header to the response for prefetch requests
+ *  to avoid double requests as suggested here:
+ * https://sergiodxa.com/tutorials/fix-double-data-request-when-prefetching-in-remix
+ */
+export const handleDataRequest: HandleDataRequestFunction = async (response: Response, { request }) => {
+	const isGet = request.method.toLowerCase() === "get"
+	const purpose =
+		request.headers.get("Purpose") ||
+		request.headers.get("X-Purpose") ||
+		request.headers.get("Sec-Purpose") ||
+		request.headers.get("Sec-Fetch-Purpose") ||
+		request.headers.get("Moz-Purpose")
+	const isPrefetch = purpose === "prefetch"
+
+	// If it's a GET request and it's a prefetch request and it doesn't have a Cache-Control header
+	if (isGet && isPrefetch && !response.headers.has("Cache-Control")) {
+		// we will cache for 10 seconds only on the browser
+		response.headers.set("Cache-Control", "private, max-age=10")
+	}
+
+	return response
 }
