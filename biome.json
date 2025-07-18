@@ -13,7 +13,13 @@
 		"enabled": true,
 		"lineWidth": 120
 	},
-	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -57,6 +63,7 @@
 			},
 			"nursery": {
 				"recommended": true,
+				"noFloatingPromises": "error",
 				"useSortedClasses": {
 					"level": "error",
 					"fix": "safe",

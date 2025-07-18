@@ -71,7 +71,7 @@ const runCleanup = async () => {
 		await fs.unlink("tests/README.md")
 		log(chalk.green("All README.md files are removed from app directory"))
 	})
-	removeTheCleanupFromPackageJsonAndScripts()
+	await removeTheCleanupFromPackageJsonAndScripts()
 }
 
-runCleanup()
+await runCleanup()
