@@ -1,7 +1,10 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"includes": ["**", "!**/app/library/icon/**/*"]
+		"includes": [
+			"**",
+			"!**/app/library/icon/**/*"
+		]
 	},
 	"vcs": {
 		"enabled": true,
@@ -13,7 +16,13 @@
 		"enabled": true,
 		"lineWidth": 120
 	},
-	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -57,11 +66,19 @@
 			},
 			"nursery": {
 				"recommended": true,
+				"noMisusedPromises": "error",
+				"noFloatingPromises": "error",
 				"useSortedClasses": {
 					"level": "error",
 					"fix": "safe",
 					"options": {
-						"functions": ["cn", "cva", "tw", "clsx", "twMerge"]
+						"functions": [
+							"cn",
+							"cva",
+							"tw",
+							"clsx",
+							"twMerge"
+						]
 					}
 				}
 			}
