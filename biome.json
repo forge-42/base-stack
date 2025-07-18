@@ -1,10 +1,7 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"includes": [
-			"**",
-			"!**/app/library/icon/**/*"
-		]
+		"includes": ["**", "!**/app/library/icon/**/*"]
 	},
 	"vcs": {
 		"enabled": true,
@@ -66,19 +63,12 @@
 			},
 			"nursery": {
 				"recommended": true,
-				"noMisusedPromises": "error",
 				"noFloatingPromises": "error",
 				"useSortedClasses": {
 					"level": "error",
 					"fix": "safe",
 					"options": {
-						"functions": [
-							"cn",
-							"cva",
-							"tw",
-							"clsx",
-							"twMerge"
-						]
+						"functions": ["cn", "cva", "tw", "clsx", "twMerge"]
 					}
 				}
 			}
