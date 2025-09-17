@@ -1,10 +1,11 @@
 import { cacheHeader } from "pretty-cache-header"
 import { z } from "zod/v4"
 import { type Language, type Namespace, resources } from "~/localization/resource"
+import { globalAppContext } from "~/server/context"
 import type { Route } from "./+types/resource.locales"
 
 export async function loader({ request, context }: Route.LoaderArgs) {
-	const { isProductionDeployment } = context
+	const { isProductionDeployment } = context.get(globalAppContext)
 	const url = new URL(request.url)
 
 	const lng = z.enum(Object.keys(resources) as Language[]).parse(url.searchParams.get("lng"))
