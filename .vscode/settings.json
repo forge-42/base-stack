@@ -4,10 +4,7 @@
 	"editor.renderWhitespace": "all",
 	"editor.rulers": [120, 160],
 	"editor.codeActionsOnSave": {
-		"source.fixAll": "always",
-		"source.organizeImports": "never",
-		"source.organizeImports.biome": "always",
-		"quickfix.biome": "always"
+		"source.fixAll.biome": "explicit"
 	},
 	"eslint.enable": false,
 	"prettier.enable": false,
