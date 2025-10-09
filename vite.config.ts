@@ -13,7 +13,7 @@ export default defineConfig({
 		// Run the react-compiler on .tsx files only when bundling
 		{
 			...babel({
-				filter: /\.tsx?$/,
+				filter: /\.(ts|tsx)$/,
 				babelConfig: {
 					presets: ["@babel/preset-typescript"],
 					plugins: ["babel-plugin-react-compiler"],
