@@ -1,6 +1,6 @@
 {
 	"$schema": "https://unpkg.com/knip@5/schema.json",
-	"entry": ["scripts/*.{ts,js}", "app/routes.ts", "app/server/*.ts", "app/library/icon/Icon.tsx"],
+	"entry": ["scripts/*.{ts,js}", "app/server/*.ts", "app/library/icon/Icon.tsx"],
 	"remix": true,
 	"lefthook": true,
 	"project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
