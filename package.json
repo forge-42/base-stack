@@ -21,7 +21,7 @@
 		"validate": "pnpm run check && pnpm run typecheck && pnpm run test && pnpm run check:unused",
 		"check": "biome check .",
 		"check:fix": "biome check --fix .",
-		"check:unused": "knip --max-issues 1",
+		"check:unused": "knip",
 		"check:unused:fix": "knip --fix",
 		"typegen": "react-router typegen",
 		"postinstall": "pnpm run typegen"
