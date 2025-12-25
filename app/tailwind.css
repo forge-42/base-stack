@@ -1,5 +1,4 @@
 @import "tailwindcss";
-/** biome-ignore lint/suspicious/noUnknownAtRules: This is a rule for the Tailwind CSS file */
 @theme {
 	/* Your theme styles go here */
 	--animate-float: float 3s ease-in-out infinite;
